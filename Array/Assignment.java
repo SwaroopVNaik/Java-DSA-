@@ -1,8 +1,12 @@
+import java.util.*;
+
 public class Assignment
 {
 
     int getLargestElement(int [] values)
     {
+        System.out.println();
+
         int largestValue = values[0];
 
         int index = 0;
@@ -22,6 +26,8 @@ public class Assignment
 
     int getSmallestElement(int [] values)
     {
+        System.out.println();
+
         int smallestValue = values[0];
 
         int index = 0;
@@ -41,6 +47,7 @@ public class Assignment
 
     int getSecondLargestElement(int [] values)
     {
+        System.out.println();
 
         int largestValue = values[0];
         int secondLargest = values[1];
@@ -66,6 +73,77 @@ public class Assignment
         return secondLargest;
     }
 
+    void ReverseArray(int [] values)
+    {
+        System.out.println();
+        System.out.println("Reversing Array ");
+
+        int index = values.length - 1;
+        while(index <= values.length - 1 && index >= 0)
+        {
+            System.out.print(values[index]);
+
+            if(index > 0)
+            {
+                System.out.print(" -> ");
+            }
+
+
+            index = index - 1;
+        }
+    }
+
+    void searchElement(int [] values)
+    {
+        System.out.println();
+        int key = 0;
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println();
+
+        System.out.println("Enter the key : ");
+        key = scanner.nextInt();
+
+        int index = 0;
+        while(index <= values.length - 1)
+        {
+            if(key == values[index])
+            {
+                System.out.println(key + " is found at Position " + index);
+                break;
+            }
+            else if(index == values.length - 1)
+            {
+                System.out.println(key + " key is not Found");
+            }
+            index = index + 1;
+        }
+        scanner.close();
+    }
+
+    void removeDuplicateValues(int [] values)
+    {
+        int leftIndex = 0;
+        int rightIndex = values.length - 1;
+
+        while(leftIndex < rightIndex)
+        {
+            System.out.print(values[leftIndex] + " -> " + values[rightIndex] + " ");
+
+            if(leftIndex != rightIndex)
+            {
+                
+            }
+
+            leftIndex = leftIndex + 1;
+            rightIndex = rightIndex - 1;
+
+        }
+
+
+    }
+
     public static void main(String[] args)
     {
 
@@ -73,15 +151,34 @@ public class Assignment
 
         int arrayV2 [] = {10, 20, 30, 40, 50};
 
+        int arrayV3 [] = {10, 20, 10, 30, 20, 40};
+
         Assignment obj = new Assignment();
 
-        System.out.println("Largest Value is : " + obj.getLargestElement(arrayV1));
+        // Level 1 : 
 
-        System.out.println("Smallest Value is : " + obj.getSmallestElement(arrayV1));
+        // Printing Largest Value :
+        // System.out.println("Largest Value is : " + obj.getLargestElement(arrayV1));
 
-        System.out.println("Second Largest Value is : " + obj.getSecondLargestElement(arrayV1));
+        // // Printing Smallest Value :
+        // System.out.println("Smallest Value is : " + obj.getSmallestElement(arrayV1));
 
-        
+        // // Printing Second Largest Value :
+        // System.out.println("Second Largest Value is : " + obj.getSecondLargestElement(arrayV1));
+
+        // // Reversing Array
+        // obj.ReverseArray(arrayV2);
+
+        // // Searching the key Element
+        // obj.searchElement(arrayV1);
+
+        // Level 2 : 
+
+        obj.removeDuplicateValues(arrayV3);
+
+
+
 
     }
+
 }

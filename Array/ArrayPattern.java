@@ -89,10 +89,10 @@ public class ArrayPattern {
         
         ArrayPattern obj = new ArrayPattern();
 
-        // obj.printLeftToRight(elements);
-        // obj.printRightToLeft(elements);
+        obj.printLeftToRight(elements);
+        obj.printRightToLeft(elements);
         obj.twoPointersMeetAtCenter(elements);
-        // obj.twoPointersMoveCentreToEnd(elements);
+        obj.twoPointersMoveCentreToEnd(elements);
     }
 
 }

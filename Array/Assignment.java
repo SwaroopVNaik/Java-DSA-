@@ -124,25 +124,36 @@ public class Assignment
 
     void removeDuplicateValues(int [] values)
     {
-        int leftIndex = 0;
-        int rightIndex = values.length - 1;
+        
+    }
 
-        while(leftIndex < rightIndex)
+    void countOfRepeatedNumber(int [] values)
+    {
+        int firstIndex = 0;
+        int count = 1;
+        int secondIndex = 1;
+
+        while(firstIndex <= values.length - 1)
         {
-            System.out.print(values[leftIndex] + " -> " + values[rightIndex] + " ");
-
-            if(leftIndex != rightIndex)
+            secondIndex = 1;
+            while(secondIndex < values.length)
             {
-                
+
+                if(values[secondIndex] == values[firstIndex])
+                {
+                    count = count + 1;
+                }
+                secondIndex = secondIndex + 1;
             }
 
-            leftIndex = leftIndex + 1;
-            rightIndex = rightIndex - 1;
+            System.out.println(values[secondIndex] + " is Repeated : " + count);
+
+            firstIndex = firstIndex + 1;
 
         }
-
-
     }
+
+
 
     public static void main(String[] args)
     {
@@ -151,7 +162,7 @@ public class Assignment
 
         int arrayV2 [] = {10, 20, 30, 40, 50};
 
-        int arrayV3 [] = {10, 20, 10, 30, 20, 40};
+        int arrayV3 [] = {10, 20, 10, 30, 20, 10};
 
         Assignment obj = new Assignment();
 
@@ -174,7 +185,9 @@ public class Assignment
 
         // Level 2 : 
 
-        obj.removeDuplicateValues(arrayV3);
+        // obj.removeDuplicateValues(arrayV3);
+
+        obj.countOfRepeatedNumber(arrayV3);
 
 
 

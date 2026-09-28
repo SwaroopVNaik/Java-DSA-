@@ -65,7 +65,7 @@ public class ArrayPattern {
         if((values.length - 1) % 2 == 0 )
         {
             rightIndex = (values.length - 1 ) / 2; 
-            leftIndex = rightIndex - 1; 
+            leftIndex = rightIndex; 
         }
         else
         {
@@ -75,23 +75,34 @@ public class ArrayPattern {
 
         while(leftIndex >= 0 && rightIndex <= (values.length - 1))
         {
-            System.out.print(" ( " + values[leftIndex] + " -> ");
-            leftIndex = leftIndex - 1;
+            if(values[leftIndex] == values[rightIndex])
+            {
+                System.out.print(" ( " + values[leftIndex] + " ) " + " -> ");
+                leftIndex = leftIndex - 1;
+                rightIndex = rightIndex + 1;
+            }
+            else
+            {
 
-            System.out.print(values[rightIndex] + " )");
-            rightIndex = rightIndex + 1;
+                System.out.print(" ( " + values[leftIndex] + " -> ");
+                leftIndex = leftIndex - 1;
+
+                System.out.print(values[rightIndex] + " )");
+                rightIndex = rightIndex + 1;
+
+            }
         }
     }
     
     public static void main(String[] args) 
     {
-        int elements [] = {10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
+        int elements [] = {10, 20, 30, 40, 50};
         
         ArrayPattern obj = new ArrayPattern();
 
-        obj.printLeftToRight(elements);
-        obj.printRightToLeft(elements);
-        obj.twoPointersMeetAtCenter(elements);
+        // obj.printLeftToRight(elements);
+        // obj.printRightToLeft(elements);
+        // obj.twoPointersMeetAtCenter(elements);
         obj.twoPointersMoveCentreToEnd(elements);
     }
 

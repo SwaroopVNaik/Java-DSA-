@@ -2,6 +2,9 @@ package Linked_List;
 
 public class SinglyLinkedList
 {
+
+    
+
     public static void main(String[] args)
     {
         // Node => DataType (user - defined)
@@ -49,7 +52,7 @@ public class SinglyLinkedList
         System.out.print(newNode.next.next.data + " -> "); // 103
         System.out.print(newNode.next.next.next + " -> "); // null 
 
-        
+
     }
 }
 

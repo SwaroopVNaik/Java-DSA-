@@ -3,8 +3,6 @@ package Linked_List;
 public class SinglyLinkedList
 {
 
-    
-
     public static void main(String[] args)
     {
         // Node => DataType (user - defined)
@@ -13,6 +11,8 @@ public class SinglyLinkedList
         // Node() = constructor
 
         Node newNode = new Node(); // Object Created -> newNode
+
+        Node head = newNode;
 
         // Initialising the newNode : 
 
@@ -47,12 +47,59 @@ public class SinglyLinkedList
 
         // checking if nodes are connected : 
 
-        System.out.print(newNode.data + " -> "); // 101
-        System.out.print(newNode.next.data + " -> "); // 102
-        System.out.print(newNode.next.next.data + " -> "); // 103
-        System.out.print(newNode.next.next.next + " -> "); // null 
+        // System.out.print(newNode.data + " -> "); // 101
+        // System.out.print(newNode.next.data + " -> "); // 102
+        // System.out.print(newNode.next.next.data + " -> "); // 103
+        // System.out.print(newNode.next.next.next + " -> "); // null 
 
+        // Creating an initialNode 
 
+        Node initialNode = new Node();
+        initialNode.data = 100;
+        initialNode.next = null;
+
+        // joining the inital node with Linked list
+
+        initialNode = newNode;
+        head = initialNode;
+
+        System.out.println("The inserting of Node at the beginning \n");
+
+        System.out.print(head.data + " -> ");
+        System.out.print(head.next.data + " -> ");
+        System.out.print(head.next.next.data + " -> ");
+        System.out.print(head.next.next.next);
+
+        // creating the lastNode 
+
+        Node lastNode = new Node();
+        lastNode.data = 300;
+        lastNode.next = null;
+
+        // Creating a temp node to traverse
+
+        Node temp = new Node();
+
+        temp = head;
+
+        while(temp.next != null)
+        {
+            temp = temp.next;
+        }
+        temp.next = lastNode;
+
+        System.out.println();
+        System.out.println("Inserting the Node at the end of List : \n");
+
+        System.out.print(head.data + " -> ");
+        System.out.print(head.next.data + " -> ");
+        System.out.print(head.next.next.data + " -> ");
+        System.out.print(head.next.next.next.data + " -> ");
+        System.out.print(head.next.next.next.next);
+
+        // Inserting the data at the middle
+
+        
     }
 }
 

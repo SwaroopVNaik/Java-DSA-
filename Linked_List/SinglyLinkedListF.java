@@ -1,6 +1,7 @@
 package Linked_List;
 
-public class SinglyLinkedListF {
+public class SinglyLinkedListF 
+{
     
     public static void main(String[] args) 
     {

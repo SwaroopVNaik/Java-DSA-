@@ -9,13 +9,15 @@ public class SinglyLinkedListF
         // Creating head
         Node head = null;
 
-        // function inovcation
+        // function invocation
         head = insertAtTheStart(100, head);
         head = insertAtTheStart(101, head);
         head = insertAtTheStart(102, head);
         head = insertAtTheStart(103, head);
         head = insertAtTheStart(104, head);
         head = insertAtTheStart(105, head);
+
+        // function invocation
         printList(head);
     }
 
@@ -49,14 +51,14 @@ public class SinglyLinkedListF
 
     public static void printList(Node head)
     {
-        Node monkey = head;
+        Node temp = head;
 
         System.out.print("head -> ");
-        while(monkey != null)
+        while(temp != null)
         {
-            System.out.print(monkey.data);
+            System.out.print(temp.data);
             System.out.print(" -> ");
-            monkey = monkey.next;
+            temp = temp.next;
         }
         System.out.print("null");
 

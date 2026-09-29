@@ -9,7 +9,7 @@ public class SinglyLinkedListF
         // Creating head
         Node head = null;
 
-        // function invocation
+        // function invocation (inserting at the beginning)
         head = insertAtTheStart(100, head);
         head = insertAtTheStart(101, head);
         head = insertAtTheStart(102, head);
@@ -17,7 +17,7 @@ public class SinglyLinkedListF
         head = insertAtTheStart(104, head);
         head = insertAtTheStart(105, head);
 
-        // function invocation
+        // function invocation (printing the nodes)
         printList(head);
     }
 

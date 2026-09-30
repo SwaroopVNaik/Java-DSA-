@@ -57,7 +57,7 @@ public class PracticeOne {
             index = index + 1;
         }
 
-        Practice obj = new Practice();
+        PracticeOne obj = new PracticeOne();
 
         obj.centerToTheEnds(array);
 

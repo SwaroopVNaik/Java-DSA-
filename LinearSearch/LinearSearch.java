@@ -47,7 +47,7 @@ public class LinearSearch {
         int array[] = {10, 20 , 30, 40, 50};
         int key = 40;
 
-        // linearsearch(array, key);
+        linearsearch(array, key);
 
         // using Scanner
 

@@ -10,9 +10,9 @@ public class LinearSearch {
 
         for(int index = 0; index <= values.length; index = index + 1)
         {
-            if(key == index)
+            if(key == values[index])
             {
-                System.out.println("Key is Found at position : " + index);
+                System.out.println(key + " is Found at position : " + index);
                 found = true;
                 break;
             }
@@ -26,9 +26,20 @@ public class LinearSearch {
 
     }
 
-    public static void linearsearchV2(int values[], int keyv2)
+    public static int linearsearchV2(int values[], int keyv2)
     {
-        
+        for(int index = 0; index <= values.length - 1; index = index + 1)
+        {
+
+            if(keyv2 == values[index])
+            {
+                return 1;
+            }
+        }
+
+        return -1;
+
+
     }
 
     public static void main(String[] args) {
@@ -36,7 +47,7 @@ public class LinearSearch {
         int array[] = {10, 20 , 30, 40, 50};
         int key = 40;
 
-        linearsearch(array, key);
+        // linearsearch(array, key);
 
         // using Scanner
 
@@ -54,11 +65,22 @@ public class LinearSearch {
 
             arrayv2[index] = scanner.nextInt();
         }
+        System.out.println();
 
         System.out.println("Enter the Key : ");
         int keyv2 = scanner.nextInt();
 
+        int result = linearsearchV2(arrayv2, keyv2);
 
+        if(result == 1)
+        {
+            System.out.println( keyv2 + " is found");
+        }
+        else
+        {
+            System.out.println(keyv2 + " is not found");
+        }
 
+        scanner.close(); 
     }
 }

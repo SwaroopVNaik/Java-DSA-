@@ -83,6 +83,71 @@ public class MyArray
         rightIndex = rightIndex + 1;
     }
 
+    // ------------------------------- Deletion --------------------------------- //
+
+    public void deleteFromEnd()
+    {
+        // Edge Case
+        if(rightIndex == 0)
+        {
+            System.out.println("Array is Empty");
+            return; 
+        }
+        else
+        {
+            array[rightIndex - 1] = 0;
+            rightIndex = rightIndex - 1;
+        }
+    }
+
+    public void deleteAtStart()
+    {
+        if(rightIndex == 0)
+        {
+            System.out.println("Arrays is Empty");
+            return; // go back to caller main() method
+        }
+        else
+        {
+            // shifiting elements from index = 0;
+            for(int index = 0; index < rightIndex; index = index + 1)
+            {
+                // deleting logic
+                array[index] = array[index + 1];
+            }
+
+            // outside loop so thing about size.
+
+            rightIndex = rightIndex - 1; // rightIndex is a size we are reducing size
+            array[rightIndex] = 0;
+
+        }
+    }
+
+    public void deleteAtAnyPosition(int position)
+    {
+        // edge cases
+        if(rightIndex == 0)
+        {
+            System.out.println("Array is Empty");
+            return; // go back to the caller main() method
+        }
+        else if(position < 0 || position >= rightIndex)
+        {
+            System.out.println("Invalid Postion");
+            return;
+        }
+        else
+        {
+            for(int index = position; index < rightIndex; index = index + 1)
+            {
+                array[index] = array[index + 1];
+            }
+            rightIndex = rightIndex - 1;
+            array[rightIndex] = 0;       
+        }
+    }
+
     // printElements 
 
     public void Printelements()

@@ -7,43 +7,45 @@ public class ArrayDemo {
         System.out.println("Initial Array : ");
         myarray.Printelements(); 
 
-        myarray.insertAtEnd(58);
-        myarray.insertAtEnd(78);
-        myarray.insertAtEnd(97);
+        myarray.insertAtEnd(10);
+        myarray.insertAtEnd(20);
+        myarray.insertAtEnd(30);
+        myarray.insertAtEnd(40);
+        myarray.insertAtEnd(50);
 
         System.out.println("==========================================");
-        System.out.println("After Inserting 58, 78 and 97");
+        System.out.println("After Inserting : ");
         System.out.println();
 
         myarray.Printelements();
 
         System.out.println("==========================================");
 
-        myarray.insertAtStart(77);
+        // myarray.insertAtStart(77);
 
-        System.out.println("After Inserting 77 at start");
-        System.out.println();
+        // System.out.println("After Inserting 77 at start");
+        // System.out.println();
 
-        myarray.Printelements();
+        // myarray.Printelements();
 
-        System.out.println("==========================================");
+        // System.out.println("==========================================");
 
-        myarray.insertAtAnyPosition(2, 24);
+        // myarray.insertAtAnyPosition(2, 24);
 
-        System.out.println("After Insert at any position");
+        // System.out.println("After Insert at any position");
 
-        System.out.println();
+        // System.out.println();
 
-        myarray.Printelements();
+        // myarray.Printelements();
 
-        System.out.println("==========================================");
+        // System.out.println("==========================================");
 
-        myarray.insertAtAnyPosition(-1, 99);
-        myarray.insertAtAnyPosition(7, 100);
+        // // myarray.insertAtAnyPosition(-1, 99);
+        // // myarray.insertAtAnyPosition(7, 100);
 
-        System.out.println("==========================================");
+        // System.out.println("==========================================");
 
-        System.out.println("Inserting at Invalid Positions");
+        /* System.out.println("Inserting at Invalid Positions");
         myarray.Printelements();
 
         System.out.println("==========================================");
@@ -51,7 +53,21 @@ public class ArrayDemo {
         // Array is full
         myarray.insertAtEnd(30);
         myarray.insertAtStart(1);
-        myarray.insertAtAnyPosition(2, 50);
+        myarray.insertAtAnyPosition(2, 50); */
+
+        //================Deletion===================
+        myarray.deleteFromEnd();
+        System.out.println("After Deleting from End");
+        myarray.Printelements();
+
+        myarray.deleteAtStart();
+        System.out.println("After Deleting from start");
+        myarray.Printelements();
+
+        myarray.deleteAtAnyPosition(2);
+        System.out.println("After Deleting from the position");
+        myarray.Printelements();
+
     }
 
 }

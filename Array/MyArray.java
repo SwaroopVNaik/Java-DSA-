@@ -17,7 +17,7 @@ public class MyArray
     // implementation of all logic
 
     // insert at end 
-    public void insertAtEnd(int value)
+    public void insertAtEnd(int value) 
     {
         // edge case
         if(rightIndex == length)

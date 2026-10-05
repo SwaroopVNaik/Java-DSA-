@@ -137,6 +137,8 @@ public class SinglyLinkedListCrud
         {
             return head.next;
         }
+
+        // List Has only two nodes
         else if(head.next == null)
         {
             return head;

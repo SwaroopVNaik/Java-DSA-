@@ -48,7 +48,7 @@ public class LinearSearch {
 
         linearsearch(array, key);
 
-        // using Scanner
+        // <----------------------- Using Scanner Linear Search V2 ---------------------------->
 
         Scanner scanner = new Scanner(System.in);
 

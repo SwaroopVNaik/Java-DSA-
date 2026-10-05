@@ -74,10 +74,6 @@ public class SinglyLinkedListCrud
         keyNode.next = newNode;
     }
 
-    static public void insertBeforeKey(int value, int key, Node PreviousNode, Node head)
-    {
-    }
-
     public static void printList(Node currentHead)
     {
         // we need to traverse the linkedlist so we use temp
@@ -92,35 +88,229 @@ public class SinglyLinkedListCrud
         System.out.print("Null");
     }
 
-    public static void main(String[] args) {
+    // ------------------------------ Delete Operations -------------------------------------------!
+
+    public static Node deleteAtStart(Node head)
+    {
+        if(head == null)
+        {
+            return null;
+        }
+        else
+        {
+            return head.next;
+        }
+    }
+
+    public static Node deleteAtLast(Node head)
+    {
+        Node lastButOne = head;
+
+        if(head == null || head.next == null)
+        {
+            return null;
+        }
+        else{
+
+            while (lastButOne.next.next != null) 
+            {
+                lastButOne = lastButOne.next;
+            }
+
+            lastButOne.next = null;
+            return head;
+
+        }
+    }
+
+    public static Node deleteAtPostion(Node head, int key)
+    {
+        // List is Empty (test case 1)
+        if(head == null)
+        {
+            System.out.println("The List is Empty");
+            return null;
+        }
         
+        // List has only one node and key is present (testcase 2)
+        if(head.data == key)
+        {
+            return head.next;
+        }
+        else if(head.next == null)
+        {
+            return head;
+        }
+
+        Node prevNode = head;
+        Node keyNode = head.next;
+
+        // many nodes key is present and not present (test case 4)
+        while(keyNode != null)
+        {
+            // handels if second node is equal to key (test case 3)
+            if(keyNode.data == key)
+            {
+                break;
+            }
+
+            prevNode = keyNode;
+            keyNode = keyNode.next;
+
+        }
+
+        if(keyNode != null && keyNode.data == key)
+        {
+            prevNode.next = keyNode.next;
+        }
+
+        return head;
+    }
+
+    public static void allTestCase()
+    {
         Node head = null;
 
+        // Test Matrix
+
+        // 1) TestCases 1 -> List is Empty !
+        System.out.println();
+        System.out.println("List is Empty");
+        printList(head);
+        
+        System.out.println();
+        System.out.println("\nInserting Single Node");
         head = insertAtStart(100, head);
-        head = insertAtStart(200, head);
-        head = insertAtStart(300, head);
-        head = insertAtStart(400, head);
-        head = insertAtStart(500, head);
-        head = insertAtStart(600, head);
+        printList(head);
 
+        // TestCase 2 -> List has Single Node (key Present)
+        System.out.println();
+        System.out.println("\nSingle Node (key is Present)");
+        head = deleteAtPostion(head, 100);
+        printList(head);
 
-        head = insertAtEnd(1000, head);
+        // TestCase 3 - List has Single Node (key is not present)
+        System.out.println();
+        System.out.println();
+        System.out.println("Single Node (key is not Present)");
+        head = insertAtStart(100, head);
+        printList(head);
 
-        insertAfterkey(3000, 300, head);
+        System.out.println();
+        System.out.println();
+        System.out.println("After Deleting Single Node (key is not present)");
+        head = deleteAtPostion(head, 200);
+        printList(head);
+
+        // 3) twoNode , Key first
+        System.out.println();
+        System.out.println("\nTwo Nodes, Key is First");
+        head = insertAtEnd(200, head);
+        printList(head);
+        System.out.println();
+
+        System.out.println("\nAfter Deleting Two Nodes, Key is First");
+        head = deleteAtPostion(head, 100);
+        printList(head);
+
+        // 4) Two Node , key Second
+        System.out.println();
+        System.out.println("\nTwo Nodes, Key is Second");
+        head = insertAtEnd(300, head);
+        printList(head);
+        System.out.println();
+
+        System.out.println("\nAfter Deleting , Key is Second");
+        head = deleteAtPostion(head, 300);
+        printList(head);
+
+        // 5) twoNode , key is not present
+        System.out.println();
+        System.out.println("\nTwo Nodes, Key is not present");
+        head = insertAtEnd(300, head);
+        printList(head);
+        System.out.println();
+
+        System.out.println("\nAfter Deleting, Two Nodes Key is not Present");
+        head = deleteAtPostion(head, 400);
+        printList(head);
+
+        // 5) Many Nodes , key first
+
+        System.out.println();
+        System.out.println("\nMany Nodes , Key is Present");
+        head = insertAtEnd(400, head);
+        head = insertAtEnd(500, head);
+        head = insertAtEnd(600, head);
+        head = insertAtEnd(700, head);
 
         printList(head);
 
         System.out.println();
+        System.out.println("\nAfter Deleting Many Nodes , Key is first");
+        head = deleteAtPostion(head, 200);
+        printList(head);
 
-        insertAfterkey(3000, 300, head);
+        // 6) Many Nodes , key is Last
 
-        insertAfterkey(1000, 200, head);
+        System.out.println();
+        System.out.println("\nMany Nodes , Key is Last");
+        printList(head);
+
+        System.out.println();
+
+        System.out.println("\nAfter Deleting Many Node, Key is Last");
+        head = deleteAtPostion(head, 700);
+        printList(head);
+
+        // 7) Many Nodes , Key Not Present
+
+        System.out.println();
+        System.out.println("\nMany Nodes , Key is Not Present");
+        printList(head);
+
+        System.out.println();
+
+        System.out.println("\nAfter Deleting Many Nodes, Key is not Present");
+        head = deleteAtPostion(head, 1000);
+        printList(head);
+
+    }
+
+    public static void main(String[] args) {
+        
+        // Node head = null;
+
+        // head = insertAtStart(100, head);
+        // head = insertAtStart(200, head);
+        // head = insertAtStart(300, head);
+        // head = insertAtStart(400, head);
+        // head = insertAtStart(500, head);
+        // head = insertAtStart(600, head);
+
+        // head = insertAtEnd(1000, head);
+
+        // insertAfterkey(3000, 300, head);
+
+        // System.out.println();
+
+        // printList(head);
+
+        // System.out.println();
+
+        // insertAfterkey(3000, 300, head);
+        // printList(head);
+
+        // System.out.println();
+
+        // insertAfterkey(1000, 200, head);
+        // printList(head);
 
         // insertBeforeKey(7000, 200, head, head);
 
+        // --------------------- Deletion ---------------------------->
 
-        printList(head);
-
+        allTestCase();
 
     }
 

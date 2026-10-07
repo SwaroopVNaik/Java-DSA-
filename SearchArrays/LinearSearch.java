@@ -28,6 +28,12 @@ public class LinearSearch {
 
     public static int linearsearchV2(int values[], int keyv2)
     {
+
+        if(values == null || values.length == 0)
+        {
+            return - 1;
+        }
+
         for(int index = 0; index <= values.length - 1; index = index + 1)
         {
 

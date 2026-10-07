@@ -23,7 +23,7 @@ public class BinarySearch {
         int rightIndex = values.length - 1;
         int midIndex = 0;
 
-        while(leftIndex <= leftIndex)
+        while(leftIndex <= rightIndex)
         {
             midIndex = leftIndex + (rightIndex - leftIndex) / 2;
 
@@ -52,15 +52,25 @@ public class BinarySearch {
 
     public static void main(String[] args) {
         
-        // In Binary Search always we should have sorted array
-        int array [] = {10, 20, 30, 40, 50, 60, 70, 80, 90 ,100};
-
         Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter the size of the array : ");
+        int size = scanner.nextInt();
+
+        int array [] = new int[size];
+
+        // In Binary Search always we should have sorted array
+        System.out.print("Enter the elements in sorted format for performing binary search : ");
+
+        for(int index = 0; index < array.length; index = index + 1)
+        {
+            array[index] = scanner.nextInt();
+        }
 
         System.out.println("Enter the Target : ");
         int target = scanner.nextInt();
 
-        System.out.println(getBinarySearch(array, target));
+        System.out.println("The Target is at Position : " + getBinarySearch(array, target));
 
         scanner.close();
 

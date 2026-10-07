@@ -132,6 +132,43 @@ public class ArraysProblem
 
         }
     }
+
+    static void swapEvenElements(int values[])
+    {
+
+        // Test Cases 
+        if(values == null || values.length == 0)
+        {
+            return; // go back to main caller
+        }
+
+        int index = 0;
+
+        while(index < values.length)
+        {
+            if(values[index] % 2 == 0)
+            {
+                // even case
+                values[index] = 0;
+            }
+            else
+            {
+                // odd case
+                values[index] = 1;
+            }
+
+            index = index + 1;
+
+        }
+
+        System.out.println("\nThe Result After Swapping the Even Elements to 0 and odd ELements to 1  : ");
+        
+        for(int indexV1 = 0; indexV1 < values.length; indexV1 = indexV1 + 1)
+        {
+            System.out.print(values[indexV1] + " ");
+        }
+
+    }
 public static void main(String[] args) 
 {
 
@@ -139,94 +176,108 @@ public static void main(String[] args)
 
     // ------------------------------------ Problem 1 ---------------------------------------------
 
-    System.out.println("Enter the Array Size : ");
-    int size = scanner.nextInt();
+    // System.out.println("Enter the Array Size : ");
+    // int size = scanner.nextInt();
 
-    int array [] = new int[size];
+    // int array [] = new int[size];
 
-    System.out.println("Enter the Elements of the Array : ");
+    // System.out.println("Enter the Elements of the Array : ");
 
-    for(int index = 0; index < array.length; index = index + 1)
-    {
-        array[index] = scanner.nextInt();
-    }
+    // for(int index = 0; index < array.length; index = index + 1)
+    // {
+    //     array[index] = scanner.nextInt();
+    // }
 
-    System.out.println("Enter the key to get comparison : ");
-    int key = scanner.nextInt();
+    // System.out.println("Enter the key to get comparison : ");
+    // int key = scanner.nextInt();
 
-    getComparisonOfNumber(array, key);
+    // getComparisonOfNumber(array, key);
 
     // ---------------------------- Problem 2 ---------------------------------------------------
 
-    System.out.println("Enter the Array Size : ");
-    int sizeV1 = scanner.nextInt();
+    // System.out.println("Enter the Array Size : ");
+    // int sizeV1 = scanner.nextInt();
 
-    int arrayV2 [] = new int[sizeV1];
+    // int arrayV2 [] = new int[sizeV1];
 
-    System.out.println("Enter the Elements of the Array : ");
+    // System.out.println("Enter the Elements of the Array : ");
 
-    for(int index = 0; index < arrayV2.length; index = index + 1)
-    {
-        arrayV2[index] = scanner.nextInt();
-    }
+    // for(int index = 0; index < arrayV2.length; index = index + 1)
+    // {
+    //     arrayV2[index] = scanner.nextInt();
+    // }
 
-    System.out.println("Enter the key to search : ");
-    int keyV2 = scanner.nextInt();
+    // System.out.println("Enter the key to search : ");
+    // int keyV2 = scanner.nextInt();
 
-    System.out.println("The Key is Present : " + isKeyPresent(arrayV2, keyV2));
+    // System.out.println("The Key is Present : " + isKeyPresent(arrayV2, keyV2));
 
     // ---------------------------------- Problem 3 -------------------------------------------------
 
-    System.out.println("Enter the Array Size : ");
-    int sizeV3 = scanner.nextInt();
+    // System.out.println("Enter the Array Size : ");
+    // int sizeV3 = scanner.nextInt();
 
-    int arrayV3 [] = new int[sizeV3];
+    // int arrayV3 [] = new int[sizeV3];
 
-    System.out.println("Enter the Elements of the Array : ");
+    // System.out.println("Enter the Elements of the Array : ");
 
-    for(int index = 0; index < arrayV3.length; index = index + 1)
-    {
-        arrayV3[index] = scanner.nextInt();
-    }
+    // for(int index = 0; index < arrayV3.length; index = index + 1)
+    // {
+    //     arrayV3[index] = scanner.nextInt();
+    // }
 
-    System.out.println("The Count of Even Numbers is : " + getCountOfEvenNumbers(arrayV3));
+    // System.out.println("The Count of Even Numbers is : " + getCountOfEvenNumbers(arrayV3));
 
     // ------------------------------- problem 4 --------------------------------------------------
 
-    System.out.println("Enter the Array Size : ");
-    int sizeV4 = scanner.nextInt();
+    // System.out.println("Enter the Array Size : ");
+    // int sizeV4 = scanner.nextInt();
 
-    int arrayV4 [] = new int[sizeV4];
+    // int arrayV4 [] = new int[sizeV4];
 
-    System.out.println("Enter the Elements of the Array : ");
+    // System.out.println("Enter the Elements of the Array : ");
 
-    for(int index = 0; index < arrayV4.length; index = index + 1)
-    {
-        arrayV4[index] = scanner.nextInt();
-    }
+    // for(int index = 0; index < arrayV4.length; index = index + 1)
+    // {
+    //     arrayV4[index] = scanner.nextInt();
+    // }
 
-    System.out.println("The Average of the sum is : " + getAverageValue(arrayV4));
+    // System.out.println("The Average of the sum is : " + getAverageValue(arrayV4));
 
     // ------------------------------- problem 5 --------------------------------------------------
 
-    System.out.println("Enter the Array Size : ");
-    int sizeV5 = scanner.nextInt();
+    // System.out.println("Enter the Array Size : ");
+    // int sizeV5 = scanner.nextInt();
 
-    int arrayV5 [] = new int[sizeV5];
+    // int arrayV5 [] = new int[sizeV5];
+
+    // System.out.println("Enter the Elements of the Array : ");
+
+    // for(int index = 0; index < arrayV5.length; index = index + 1)
+    // {
+    //     arrayV5[index] = scanner.nextInt();
+    // }
+
+    // swapElements(arrayV5);
+
+    // ------------------------------------- problem 6 -------------------------------------------
+
+    System.out.println("Enter the Array Size : ");
+    int sizeV6 = scanner.nextInt();
+
+    int arrayV6 [] = new int[sizeV6];
 
     System.out.println("Enter the Elements of the Array : ");
 
-    for(int index = 0; index < arrayV5.length; index = index + 1)
+    for(int index = 0; index < arrayV6.length; index = index + 1)
     {
-        arrayV5[index] = scanner.nextInt();
+        arrayV6[index] = scanner.nextInt();
     }
 
-    swapElements(arrayV5);
+    swapEvenElements(arrayV6);
 
     scanner.close();
     
     }
-
-
 
 }

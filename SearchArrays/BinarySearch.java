@@ -28,22 +28,23 @@ public class BinarySearch {
             midIndex = leftIndex + (rightIndex - leftIndex) / 2;
 
             // condition 1
-            if(values[midIndex] == target)
+            if(target == values[midIndex])
             {
                 return midIndex;
             }
 
             // conditon 2
-            if(values[midIndex] > target)
-            {
-                rightIndex = midIndex - 1;
-            }
-
-            // condtion 3
-            if(values[midIndex] < target)
+            if(target > values[midIndex])
             {
                 leftIndex = midIndex + 1;
             }
+
+            // condtion 3
+            if(target < values[midIndex])
+            {
+                rightIndex = midIndex - 1;
+            }
+            
 
         }
 

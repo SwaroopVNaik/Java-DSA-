@@ -34,13 +34,13 @@ public class BinarySearch {
             }
 
             // conditon 2
-            if(target > values[midIndex])
+            else if(target > values[midIndex])
             {
                 leftIndex = midIndex + 1;
             }
 
             // condtion 3
-            if(target < values[midIndex])
+            else if(target < values[midIndex])
             {
                 rightIndex = midIndex - 1;
             }
@@ -48,7 +48,7 @@ public class BinarySearch {
 
         }
 
-        return midIndex;
+        return -1;
     }
 
     public static void main(String[] args) {

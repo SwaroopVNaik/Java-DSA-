@@ -244,6 +244,35 @@ public class ArraysProblemOne
         return numberCounter;
     }
 
+    static int [] getTheDaysWithMoreNumberOfSteps(int [] nums)
+    {
+        if(nums == null || nums.length == 0)
+        {
+            return new int[]{-1};
+        }
+
+        int moreNumberSteps = 0;
+        int count = 0;
+
+        int index = 0;
+
+        while(index < nums.length)
+        {
+            if(nums[index] >= 10000)
+            {
+                count = count + 1;
+            }
+
+            if(nums[index] >= 10000)
+            {
+                moreNumberSteps = nums[index];
+            }
+
+            index = index + 1;
+        }
+        return new int[]{count, moreNumberSteps};
+    }
+
 
 
     static void printingArray(int [] nums)
@@ -344,11 +373,12 @@ public class ArraysProblemOne
 
         // ------------------------------- Method 9 -----------------------------------------
 
-        System.out.println("result : " + getNumberOfNumberDivisibleByThreeAndFive(array));
+        // System.out.println("result : " + getNumberOfNumberDivisibleByThreeAndFive(array));
 
         // ------------------------------- Method 10 -----------------------------------------
 
-
+        int result[] = getTheDaysWithMoreNumberOfSteps(array);
+        printingArray(result);
 
 
     scanner.close();

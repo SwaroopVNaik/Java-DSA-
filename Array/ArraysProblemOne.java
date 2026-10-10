@@ -56,27 +56,37 @@ public class ArraysProblemOne
         return average;
     }
 
-    // static int[] getNumbersAboveFiftyBelowHunderd(int [] nums)
-    // {
-    //     if(nums == null || nums.length == 0)
-    //     {
-    //         return new int[]{-1};
-    //     }
+    static int[] getNumbersAboveFiftyBelowHunderd(int [] nums)
+    {
+        if(nums == null || nums.length == 0)
+        {
+            return new int[]{-1};
+        }
 
-    //     int count = 0;
+        int count = 0;
 
-    //     for(int index = 0; index < nums.length; index = index + 1)
-    //     {
-    //         if(nums[index] > 50 && nums[index] < 100)
-    //         {
-    //             count = count + 1;
-    //         }
-    //     }
+        for(int index = 0; index < nums.length; index = index + 1)
+        {
+            if(nums[index] > 50 && nums[index] < 100)
+            {
+                count = count + 1;
+            }
+        }
 
-    //     int array[] = new int[count];
+        int updatedNum [] = new int[count];
+        int resultIndex = 0;
 
-    //     // pending
-    // }
+        for(int index = 0; index < nums.length; index = index + 1)
+        {
+            if(nums[index] > 50 && nums[index] < 100)
+            {
+                updatedNum[resultIndex] = nums[index];
+                resultIndex = resultIndex + 1;
+            }
+        }
+
+        return updatedNum;
+    }
 
     static int getDifferenceFromMaxAndMin(int [] nums)
     {
@@ -106,6 +116,69 @@ public class ArraysProblemOne
         return max - min;
     }
 
+    static int getNumberOfStudentsPassed(int [] nums)
+    {
+        // testCases
+        if(nums == null || nums.length == 0)
+        {
+            return -1;
+        }
+
+        int studentsPassedCount = 0;
+        int index = 0;
+
+        while(index < nums.length)
+        {
+            if(nums[index] >= 35)
+            {
+                studentsPassedCount = studentsPassedCount + 1;
+            }
+
+            index = index + 1;
+        }
+
+        return studentsPassedCount;
+    }
+
+    int getSumOfNumbersAtPosition(int [] nums)
+    {
+        // edge cases
+        if(nums == null || nums.length == 0)
+        {
+            return -1;
+        }
+
+        int sum = 0;
+        int index = 0;
+
+        while(index < nums.length)
+        {
+                if(index % 2 == 0)
+                {
+                    sum = sum + nums[index];
+                }
+
+            index = index + 1;
+        }
+
+        return sum;
+    }
+
+    static void printingArray(int [] nums)
+    {
+        System.out.print("[ ");
+        for(int index = 0; index < nums.length; index = index + 1)
+        {
+            System.out.print(nums[index]);
+
+            if(index < nums.length - 1)
+            {
+                System.out.print(" , ");
+            }
+        }
+        System.out.print( " ]");
+    }
+
     public static void main(String[] args) 
     {
         Scanner scanner = new Scanner(System.in);
@@ -130,19 +203,8 @@ public class ArraysProblemOne
 
         // ------------------------------ Method 1 --------------------------------------
 
-        // int [] arrayv2 = getCountOfOddOrEven(array);
-
-        // System.out.print("[ ");
-        // for(int indexv2 = 0; indexv2 < arrayv2.length; indexv2 = indexv2 + 1)
-        // {
-        //     System.out.print(arrayv2[indexv2]);
-
-        //     if(indexv2 < arrayv2.length - 1)
-        //     {
-        //         System.out.print(" , ");
-        //     }
-        // }
-        // System.out.print( " ]");
+        int [] arrayv2 = getCountOfOddOrEven(array);
+        printingArray(arrayv2);
 
         // ------------------------------- Method 2 ---------------------------------------
 
@@ -175,15 +237,21 @@ public class ArraysProblemOne
 
         // --------------------------------- Method 4 --------------------------------------
 
-        int result = getDifferenceFromMaxAndMin(array);
+        // int result = getDifferenceFromMaxAndMin(array);
 
-        System.out.println("The difference is : " + result);
+        // System.out.println("The difference is : " + result);
 
         // -------------------------------- Method 5 ----------------------------------------
 
+        // System.out.println("Number of Students Passed : " + getNumberOfStudentsPassed(array));
         
+        // ------------------------------- Method 6 -----------------------------------------
 
-        
+        // ArraysProblemOne obj = new ArraysProblemOne();
+
+        // System.out.println("The Sum is : " + obj.getSumOfNumbersAtPosition(array));
+
+        // ------------------------------- Method 7 -----------------------------------------
 
     scanner.close();
     }

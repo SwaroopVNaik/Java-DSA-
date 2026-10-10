@@ -164,6 +164,31 @@ public class ArraysProblemOne
         return sum;
     }
 
+    static int getHotterDaysInAWeek(int [] nums)
+    {
+        if(nums == null || nums.length == 0 || nums.length == 1)
+        {
+            return -1;
+        }
+
+        int previousDay = 0;
+        int currentDay = 1;
+        int count = 0;
+
+        while(previousDay <  nums.length - 1 && currentDay < nums.length)
+        {
+            if(nums[currentDay] > nums[previousDay])
+            {
+                count = count + 1;
+            }
+
+            previousDay = previousDay + 1;
+            currentDay = currentDay + 1;
+        }
+
+        return count;
+    }
+
     static void printingArray(int [] nums)
     {
         System.out.print("[ ");
@@ -203,8 +228,8 @@ public class ArraysProblemOne
 
         // ------------------------------ Method 1 --------------------------------------
 
-        int [] arrayv2 = getCountOfOddOrEven(array);
-        printingArray(arrayv2);
+        // int [] arrayv2 = getCountOfOddOrEven(array);
+        // printingArray(arrayv2);
 
         // ------------------------------- Method 2 ---------------------------------------
 
@@ -252,6 +277,8 @@ public class ArraysProblemOne
         // System.out.println("The Sum is : " + obj.getSumOfNumbersAtPosition(array));
 
         // ------------------------------- Method 7 -----------------------------------------
+
+        System.out.println("The Number of days Hot : " + getHotterDaysInAWeek(array));
 
     scanner.close();
     }

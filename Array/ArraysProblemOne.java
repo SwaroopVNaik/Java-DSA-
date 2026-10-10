@@ -189,6 +189,63 @@ public class ArraysProblemOne
         return count;
     }
 
+    static int[] getDoubledOddNumberAndHalvedEvenNumbers(int [] nums)
+    {
+        if(nums == null || nums.length == 0)
+        {
+            return new int[]{-1};
+        }
+
+        int [] newArray = new int[nums.length];
+        int newIndex = 0;
+
+        int index = 0;
+        while(index < nums.length)
+        {
+            if(nums[index] % 2 == 0)
+            {
+                newArray[newIndex] = nums[index] / 2;
+                newIndex = newIndex + 1;
+            }
+
+            if(nums[index] % 2 != 0)
+            {
+                newArray[newIndex] = nums[index] * 2;
+                newIndex = newIndex + 1;
+            }
+
+            index = index + 1;
+        }
+
+        return newArray;
+
+    }
+
+    static int getNumberOfNumberDivisibleByThreeAndFive(int nums [])
+    {
+        if(nums == null || nums.length == 0)
+        {
+            return -1;
+        }
+
+        int numberCounter = 0;
+
+        int index = 0;
+        while(index < nums.length)
+        {
+            if(nums[index] % 3 == 0 && nums[index] % 5 == 0)
+            {
+                numberCounter = numberCounter + 1;
+            }
+
+            index = index + 1;
+        }
+
+        return numberCounter;
+    }
+
+
+
     static void printingArray(int [] nums)
     {
         System.out.print("[ ");
@@ -278,7 +335,21 @@ public class ArraysProblemOne
 
         // ------------------------------- Method 7 -----------------------------------------
 
-        System.out.println("The Number of days Hot : " + getHotterDaysInAWeek(array));
+        // System.out.println("The Number of days Hot : " + getHotterDaysInAWeek(array));
+
+        // ------------------------------- Method 8 -----------------------------------------
+
+        // int [] result = getDoubledOddNumberAndHalvedEvenNumbers(array);
+        // printingArray(result);
+
+        // ------------------------------- Method 9 -----------------------------------------
+
+        System.out.println("result : " + getNumberOfNumberDivisibleByThreeAndFive(array));
+
+        // ------------------------------- Method 10 -----------------------------------------
+
+
+
 
     scanner.close();
     }

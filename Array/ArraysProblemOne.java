@@ -19,11 +19,11 @@ public class ArraysProblemOne
             // Even Case 
             if(nums[index] % 2 == 0)
             {
-                oddCount = oddCount + 1;
+                evenCount = evenCount + 1;
             }
             else
             {
-                evenCount = evenCount + 1;
+                oddCount = oddCount + 1;
             }
         }
 
@@ -39,8 +39,8 @@ public class ArraysProblemOne
             return -1;
         }
 
-        int sum = 0;
-        int average = 0;
+        double sum = 0;
+        double average = 0;
 
         int index = 0;
         while(index < nums.length)
@@ -263,7 +263,7 @@ public class ArraysProblemOne
                 count = count + 1;
             }
 
-            if(nums[index] >= 10000)
+            if(nums[index] > moreNumberSteps)
             {
                 moreNumberSteps = nums[index];
             }
@@ -273,7 +273,65 @@ public class ArraysProblemOne
         return new int[]{count, moreNumberSteps};
     }
 
+    static int[] getNonNegativeArray(int nums[])
+    {
+        if(nums == null || nums.length == 0)
+        {
+            return new int[]{-1};
+        }
 
+        int index = 0;
+
+        while(index < nums.length)
+        {
+            if(nums[index] < 0)
+            {
+                nums[index] = 0;
+            }
+
+            index = index + 1;
+        }
+
+        return nums;
+    }
+
+    static Boolean checkIfArrayIsInIncreasingOrder(int [] nums)
+    {
+        Boolean Increase = false;
+
+        if(nums == null || nums.length == 0 || nums.length == 1)
+        {
+            return false;
+        }
+
+        int index = 0;
+        int nextIndex = 1;
+        while(index < nums.length - 1 && nextIndex < nums.length)
+        {
+            if(nums[nextIndex] > nums[index])
+            {
+                Increase = true;
+            }
+
+            if(nums[nextIndex] == nums[index])
+            {
+                Increase = false;
+                break;
+            }
+
+            if(nums[nextIndex] < nums[index])
+            {
+                Increase = false;
+                break;
+            }
+
+            index = index + 1;
+            nextIndex = nextIndex + 1;
+        }
+
+        return Increase;
+
+    }
 
     static void printingArray(int [] nums)
     {
@@ -375,11 +433,20 @@ public class ArraysProblemOne
 
         // System.out.println("result : " + getNumberOfNumberDivisibleByThreeAndFive(array));
 
-        // ------------------------------- Method 10 -----------------------------------------
+        // ------------------------------- Method 11 -----------------------------------------
 
         int result[] = getTheDaysWithMoreNumberOfSteps(array);
         printingArray(result);
 
+        // ------------------------------- Method 12 -----------------------------------------
+
+        // int result [] = getNonNegativeArray(array);
+        // printingArray(result);
+
+        // ------------------------------- Method 12 -----------------------------------------
+
+        // Boolean result = checkIfArrayIsInIncreasingOrder(array);
+        // System.out.println("Array In Increasing Order : " + result);
 
     scanner.close();
     }

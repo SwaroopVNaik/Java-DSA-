@@ -2,6 +2,7 @@ public class ExtraProblems {
 
     static int getDifferenceOfLargestAndSmallest(int [] nums)
     {
+        // edgeCase
         if(nums == null || nums.length == 0 || nums.length == 1)
         {
             return -1;

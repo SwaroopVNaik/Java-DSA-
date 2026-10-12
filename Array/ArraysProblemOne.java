@@ -39,7 +39,7 @@ public class ArraysProblemOne
             return -1;
         }
 
-        double sum = 0;
+        int sum = 0;
         double average = 0;
 
         int index = 0;
@@ -51,7 +51,7 @@ public class ArraysProblemOne
             index = index + 1;
         }
 
-        average = sum / nums.length;
+        average = (double) sum / nums.length;
 
         return average;
     }
@@ -333,6 +333,71 @@ public class ArraysProblemOne
 
     }
 
+    static int getclosestToAverage(int arr[])
+    {
+        if(arr == null || arr.length == 0)
+        {
+            return -1;
+        }
+
+        double avg = 0;
+        int sum = 0;
+
+        for(int i = 0; i < arr.length; i++)
+        {
+            sum = sum + arr[i];
+        }
+        avg = (double) sum  / arr.length;
+
+        int closest = arr[0];
+        double minDistance = closest - avg;
+
+        if (minDistance < 0)
+        {
+            minDistance = -minDistance;
+        }
+
+        for (int i = 0; i < arr.length; i++)
+        {
+            double difference = arr[i] - avg;
+
+            if (difference < 0)
+            {
+                difference = -difference;
+            }
+
+            if (difference < minDistance)
+            {
+                minDistance = difference;
+                closest = arr[i];
+            }
+        }
+        return closest;
+    }
+
+    static int getNumberOfStudentsPassedV2(int [] nums)
+    {
+        if(nums == null || nums.length == 0)
+        {
+            return -1;
+        }
+
+        int studentCount = 0;
+        int index = 0;
+        while (index < nums.length ) 
+        {
+            if(nums[index] >= 35 )
+            {
+                studentCount = studentCount + 1;
+            }
+
+            index = index + 1;
+
+        }
+
+        return studentCount;
+    }
+
     static void printingArray(int [] nums)
     {
         System.out.print("[ ");
@@ -435,8 +500,13 @@ public class ArraysProblemOne
 
         // ------------------------------- Method 11 -----------------------------------------
 
-        int result[] = getTheDaysWithMoreNumberOfSteps(array);
-        printingArray(result);
+        // int result[] = getTheDaysWithMoreNumberOfSteps(array);
+        // printingArray(result);
+
+        // ------------------------------ Method 10 ------------------------------------------
+
+        // int result = getclosestToAverage(array);
+        // System.out.println(result);
 
         // ------------------------------- Method 12 -----------------------------------------
 
@@ -447,6 +517,11 @@ public class ArraysProblemOne
 
         // Boolean result = checkIfArrayIsInIncreasingOrder(array);
         // System.out.println("Array In Increasing Order : " + result);
+
+        // extra problem
+
+        int result = getNumberOfStudentsPassed(array);
+        System.out.println("Number of Students : " + result);
 
     scanner.close();
     }

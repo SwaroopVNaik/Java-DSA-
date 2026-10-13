@@ -398,6 +398,32 @@ public class ArraysProblemOne
         return studentCount;
     }
 
+    static int sumOfFirstandLastPosition(int [] nums)
+    {
+        if(nums == null || nums.length == 0 || nums.length == 1)
+        {
+            return -1;
+        }
+
+        int firstPosition = nums[0];
+        int lastPosition = nums[nums.length - 1];
+
+        // edge case if value is negative converting it to positive
+        if(firstPosition < 0)
+        {
+            firstPosition = firstPosition * -1;
+        }
+
+        if(lastPosition < 0)
+        {
+            lastPosition = lastPosition * -1;
+        }
+
+        int result = firstPosition + lastPosition;
+
+        return result;
+    }
+
     static void printingArray(int [] nums)
     {
         System.out.print("[ ");
@@ -518,10 +544,15 @@ public class ArraysProblemOne
         // Boolean result = checkIfArrayIsInIncreasingOrder(array);
         // System.out.println("Array In Increasing Order : " + result);
 
+        // ------------------------------- Method 13 -----------------------------------------
+
+        int result = sumOfFirstandLastPosition(array);
+        System.out.println("The sum of last and first is : " + result);
+
         // extra problem
 
-        int result = getNumberOfStudentsPassed(array);
-        System.out.println("Number of Students : " + result);
+        // int result = getNumberOfStudentsPassed(array);
+        // System.out.println("Number of Students : " + result);
 
     scanner.close();
     }

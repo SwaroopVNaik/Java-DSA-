@@ -424,6 +424,79 @@ public class ArraysProblemOne
         return result;
     }
 
+    static double getDiscountIfTotalAmountAboveThousand(int [] nums)
+    {
+        if(nums == null || nums.length == 0)
+        {
+            return -1;
+        }
+
+        double amount = 0;
+        int index = 0;
+
+        while(index < nums.length)
+        {
+
+            amount = amount + nums[index];
+
+            index = index + 1;
+
+        }
+
+        double finalAmount = 0;
+
+        if(amount > 1000)
+        {
+            finalAmount = amount * 0.90;
+        }
+
+        if(amount < 1000)
+        {
+            finalAmount = amount;
+        }
+
+        return finalAmount;
+    }
+
+    static int getcountTheNumberOfPalindrome(int [] nums)
+    {
+        if(nums == null ||  nums.length == 0)
+        {
+            return -1;
+        }
+
+        int number = 0;
+        int palindromeCount = 0;
+        int reversedNumber = 0;
+        int lastdigit = 0;
+        int index = 0;
+
+        while(index < nums.length)
+        {
+            number = nums[index];
+
+            while(number > 0)
+            {
+                lastdigit =  number % 10;
+                reversedNumber = (reversedNumber * 10) + lastdigit;
+                number = number / 10;
+            }
+
+            if(reversedNumber == nums[index])
+            {
+                palindromeCount = palindromeCount + 1;
+            }
+
+            reversedNumber = 0;
+            lastdigit = 0;
+
+            index = index + 1;
+        }
+
+        return palindromeCount;
+    
+    }
+
     static void printingArray(int [] nums)
     {
         System.out.print("[ ");
@@ -546,8 +619,20 @@ public class ArraysProblemOne
 
         // ------------------------------- Method 13 -----------------------------------------
 
-        int result = sumOfFirstandLastPosition(array);
-        System.out.println("The sum of last and first is : " + result);
+        // int result = sumOfFirstandLastPosition(array);
+        // System.out.println("The sum of last and first is : " + result);
+
+        // ------------------------------- Method 14 -----------------------------------------
+
+        // double result = getDiscountIfTotalAmountAboveThousand(array);
+        // System.out.println("The final Amount is  : " + result);
+
+        // ------------------------------- Method 15 -----------------------------------------
+
+        int result = getcountTheNumberOfPalindrome(array);
+        System.out.println("The Total Number of palindrome is : " + result);
+
+
 
         // extra problem
 

@@ -629,9 +629,12 @@ public class ArraysProblemOne
 
         // ------------------------------- Method 15 -----------------------------------------
 
-        int result = getcountTheNumberOfPalindrome(array);
-        System.out.println("The Total Number of palindrome is : " + result);
+        // int result = getcountTheNumberOfPalindrome(array);
+        // System.out.println("The Total Number of palindrome is : " + result);
 
+        // ------------------------------- Method 16 -----------------------------------------
+
+        
 
 
         // extra problem

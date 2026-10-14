@@ -497,6 +497,77 @@ public class ArraysProblemOne
     
     }
 
+    static int[] getSumOfDigits(int [] nums)
+    {
+        if(nums == null || nums.length == 0)
+        {
+            return new int[]{-1};
+        }
+
+        int digit = 0;
+        int sum = 0;
+        int number = 0;
+        int [] newArray = new int[nums.length];
+        int writeIndex = 0;
+
+        int index = 0;
+        while(index < nums.length)
+        {
+            number = nums[index];
+
+            // number is negative make it positive
+            if(number  < 0)
+            {
+                number = number * -1;
+            }
+
+            while(number > 0)
+            {
+                digit = number % 10;
+                sum = sum + digit;
+                number = number / 10;
+            }
+
+            newArray[writeIndex] = sum;
+            writeIndex = writeIndex + 1;
+
+            sum = 0;
+            index = index + 1;
+
+        }
+
+        return newArray;
+
+    }
+
+    static int getNumberOfTimesTheSignChanges(int [] nums)
+    {
+        if(nums == null || nums.length == 0)
+        {
+            return -1;
+        }
+
+        int signCounter = 0;
+        int index = 0;
+
+        while(index < nums.length - 1)
+        {
+            if(nums[index] > 0 && nums[index + 1] < 0)
+            {
+                signCounter = signCounter + 1;
+            }
+
+            if(nums[index] < 0 && nums[index + 1] > 0)
+            {
+                signCounter = signCounter + 1;
+            }
+
+            index = index + 1;
+        }
+
+        return signCounter;
+    }
+
     static void printingArray(int [] nums)
     {
         System.out.print("[ ");
@@ -634,13 +705,25 @@ public class ArraysProblemOne
 
         // ------------------------------- Method 16 -----------------------------------------
 
-        
+        // int [] result = getSumOfDigits(array);
+        // printingArray(result);
 
+        // ------------------------------- Method 16 -----------------------------------------
 
         // extra problem
 
         // int result = getNumberOfStudentsPassed(array);
         // System.out.println("Number of Students : " + result);
+
+        // ------------------------------- Method 17 -----------------------------------------
+
+        // int result = getNumberOfTimesTheSignChanges(array);
+        // System.out.println("Total Number of Times Sign Changed : " + result);
+
+        // ------------------------------- Method 18 -----------------------------------------
+
+        
+
 
     scanner.close();
     }

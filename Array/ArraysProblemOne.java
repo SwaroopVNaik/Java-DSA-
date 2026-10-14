@@ -568,6 +568,29 @@ public class ArraysProblemOne
         return signCounter;
     }
 
+    static int getMaxRuns(int [] nums)
+    {
+        if(nums == null || nums.length == 0)
+        {
+            return -1;
+        }
+
+        int max = 0;
+        int index = 0;
+
+        while(index < nums.length)
+        {
+            if(nums[index] > max)
+            {
+                max = nums[index];
+            }
+
+            index = index + 1;
+        }
+
+        return max;
+    }
+
     static void printingArray(int [] nums)
     {
         System.out.print("[ ");
@@ -722,7 +745,8 @@ public class ArraysProblemOne
 
         // ------------------------------- Method 18 -----------------------------------------
 
-        
+        int result = getMaxRuns(array);
+        System.out.println("Max Runs Are : " + result);
 
 
     scanner.close();

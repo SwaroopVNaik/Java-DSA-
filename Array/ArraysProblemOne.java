@@ -568,7 +568,7 @@ public class ArraysProblemOne
         return signCounter;
     }
 
-    static int getMaxRuns(int [] nums)
+    static int getTheOverWithMostRuns(int [] nums)
     {
         if(nums == null || nums.length == 0)
         {
@@ -582,7 +582,7 @@ public class ArraysProblemOne
         {
             if(nums[index] > max)
             {
-                max = nums[index];
+                max = index;
             }
 
             index = index + 1;
@@ -590,6 +590,8 @@ public class ArraysProblemOne
 
         return max;
     }
+
+    
 
     static void printingArray(int [] nums)
     {
@@ -745,7 +747,7 @@ public class ArraysProblemOne
 
         // ------------------------------- Method 18 -----------------------------------------
 
-        int result = getMaxRuns(array);
+        int result = getTheOverWithMostRuns(array);
         System.out.println("Max Runs Are : " + result);
 
 

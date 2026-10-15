@@ -591,7 +591,40 @@ public class ArraysProblemOne
         return max;
     }
 
-    
+    static int getNumberOfSubjectsRaviScoredMoreThanSita(int [] Ravi, int [] Sita)
+    {
+        if(Ravi == null || Ravi.length == 0)
+        {
+            return -1;
+        }
+
+        if(Sita == null || Sita.length == 0)
+        {
+            return -1;
+        }
+
+        if(Sita.length != Ravi.length)
+        {
+            return -1;
+        }
+
+        int GreaterMarksCounter = 0;
+        int RaviIndex = 0;
+        int SitaIndex = 0;
+
+        while(RaviIndex < Ravi.length && SitaIndex < Sita.length)
+        {
+            if(Ravi[RaviIndex] > Sita[SitaIndex])
+            {
+                GreaterMarksCounter++;
+            }
+
+            RaviIndex++;
+            SitaIndex++;
+        }
+
+        return GreaterMarksCounter;
+    }
 
     static void printingArray(int [] nums)
     {
@@ -610,25 +643,25 @@ public class ArraysProblemOne
 
     public static void main(String[] args) 
     {
-        Scanner scanner = new Scanner(System.in);
+        // Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Enter the Size of the Array : ");
-        int size = scanner.nextInt();
+        // System.out.println("Enter the Size of the Array : ");
+        // int size = scanner.nextInt();
 
-        int array [] = new int[size];
+        // int array [] = new int[size];
 
-        // Input validation
-        if(size > 0)
-        {
+        // // Input validation
+        // if(size > 0)
+        // {
 
-            System.out.println("Enter the Elements of the Array : ");
+        //     System.out.println("Enter the Elements of the Array : ");
 
-            for(int index = 0; index < array.length; index = index + 1 )
-            {
-                array[index] = scanner.nextInt();
-            }
+        //     for(int index = 0; index < array.length; index = index + 1 )
+        //     {
+        //         array[index] = scanner.nextInt();
+        //     }
 
-        }
+        // }
 
         // ------------------------------ Method 1 --------------------------------------
 
@@ -747,11 +780,21 @@ public class ArraysProblemOne
 
         // ------------------------------- Method 18 -----------------------------------------
 
-        int result = getTheOverWithMostRuns(array);
-        System.out.println("Max Runs Are : " + result);
+        // int result = getTheOverWithMostRuns(array);
+        // System.out.println("Max Runs Are : " + result);
 
+        // ------------------------------- Method 19 -----------------------------------------
 
-    scanner.close();
+        int [] Ravi = {78, 65, 90, 55, 82};
+        int [] Sita = {70, 80, 85, 60, 82};
+        int result = getNumberOfSubjectsRaviScoredMoreThanSita(Ravi, Sita);
+        System.out.println("Number of Marks greater then Sita : " + result);
+
+        // ------------------------------- Method 20 -----------------------------------------
+
+        
+
+    // scanner.close();
     }
     
 }

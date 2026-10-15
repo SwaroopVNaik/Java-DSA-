@@ -626,6 +626,125 @@ public class ArraysProblemOne
         return GreaterMarksCounter;
     }
 
+    static int[] getBiggerNumberInNewArray(int [] numberOne, int [] numberTwo)
+    {
+        if(numberOne == null || numberOne.length == 0)
+        {
+            return new int[]{-1};
+        }
+
+        if(numberTwo == null || numberTwo.length == 0)
+        {
+            return new int[]{-1};
+        }
+
+        if(numberOne.length != numberTwo.length)
+        {
+            return new int[]{-1};
+        }
+
+        int newArray [] = new int[numberOne.length];
+        int index = 0;
+
+        int firstIndex = 0;
+        int secondIndex = 0;
+
+        while(firstIndex < numberOne.length && secondIndex < numberTwo.length)
+        {
+            if(numberOne[firstIndex] > numberTwo[secondIndex])
+            {
+                newArray[index] = numberOne[firstIndex];
+                index = index + 1;
+            }
+
+            if(numberTwo[secondIndex] > numberOne[firstIndex])
+            {
+                newArray[index] = numberTwo[secondIndex];
+                index = index + 1;
+            }
+
+            firstIndex = firstIndex + 1;
+            secondIndex = secondIndex + 1;
+        }
+
+        return newArray;
+    }
+
+    static int[] getUniqueElements(int [] numOne, int [] numTwo)
+    {
+        if(numOne == null || numOne.length == 0)
+        {
+            return new int[]{-1};
+        }
+
+        if(numTwo == null || numTwo.length == 0)
+        {
+            return new int[]{-1};
+        }
+
+        int Counter = 0;
+        int index = 0;
+        Boolean Flag = false;
+
+        while(index < numOne.length)
+        {
+            int jndex = 0;
+            while (jndex < numTwo.length) 
+            {
+                if(numOne[index] == numTwo[jndex])
+                {
+                    Flag = true;
+                }
+                
+                jndex = jndex + 1;
+            }
+
+            if(Flag == false)
+            {
+                Counter = Counter + 1;
+            }
+
+            Flag = false;
+
+            index = index + 1;
+        }
+
+
+        int [] newArray = new int[Counter];
+        int writeIndex = 0;
+
+        Boolean flag = false;
+        
+        index = 0;
+        while(index < numOne.length)
+        {
+            int jndex = 0;
+            while(jndex < numTwo.length)
+            {
+                if(numOne[index] == numTwo[jndex])
+                {
+                    flag = true;
+                }
+
+                jndex = jndex + 1;
+            }
+
+            if(flag == false)
+            {
+                newArray[writeIndex] = numOne[index];
+                writeIndex = writeIndex + 1;
+            }
+
+            flag = false;
+
+            index = index + 1;
+
+        }
+
+        return newArray;
+
+    }
+
     static void printingArray(int [] nums)
     {
         System.out.print("[ ");
@@ -785,12 +904,36 @@ public class ArraysProblemOne
 
         // ------------------------------- Method 19 -----------------------------------------
 
-        int [] Ravi = {78, 65, 90, 55, 82};
-        int [] Sita = {70, 80, 85, 60, 82};
-        int result = getNumberOfSubjectsRaviScoredMoreThanSita(Ravi, Sita);
-        System.out.println("Number of Marks greater then Sita : " + result);
+        // int [] Ravi = {78, 65, 90, 55, 82};
+        // int [] Sita = {70, 80, 85, 60, 82};
+        // int result = getNumberOfSubjectsRaviScoredMoreThanSita(Ravi, Sita);
+        // System.out.println("Number of Marks greater then Sita : " + result);
 
         // ------------------------------- Method 20 -----------------------------------------
+    
+        // int [] arrayOne = {10, 70, 50, 100, 200};
+        // int [] arrayTwo = {2, 700, 49, 99, 300};
+
+        // int result [] = getBiggerNumberInNewArray(arrayOne, arrayTwo);
+
+        // for(int index : result)
+        // {
+        //     System.out.println(index + " ");
+        // }
+
+        // ------------------------------- Method 21 -----------------------------------------
+
+        // int [] arrayOne = {1, 4, 6, 8, 10};
+        // int [] arrayTwo = {4, 8, 12};
+
+        // int result [] = getUniqueElements(arrayOne, arrayTwo);
+        // for(int index : result)
+        // {
+        //     System.out.println(index + " ");
+        // }
+
+        // ------------------------------- Method 22 -----------------------------------------
+        
 
         
 

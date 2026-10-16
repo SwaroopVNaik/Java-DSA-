@@ -793,7 +793,135 @@ public class ArraysProblemOne
 
     }
 
+    static int getTheHighestScore(int [] playerOne, int [] playerTwo, int[] playerThree)
+    {
+        if(playerOne == null || playerOne.length == 0)
+        {
+            return -1;
+        }
 
+        if(playerTwo == null || playerTwo.length == 0)
+        {
+            return -1;
+        }
+
+        if(playerThree == null || playerThree.length  == 0)
+        {
+            return -1;
+        }
+
+        int PlayerOneSum = 0;
+        int PlayerTwoSum = 0;
+        int PlayerThreeSum = 0;
+        int highest = 0;
+        int index = 0;
+        while(index < playerOne.length)
+        {
+            PlayerOneSum = PlayerOneSum + playerOne[index];
+
+            PlayerTwoSum = PlayerTwoSum + playerTwo[index];
+
+            PlayerThreeSum = PlayerThreeSum + playerThree[index];
+
+            index = index + 1;
+        }
+
+        if(PlayerOneSum > PlayerTwoSum && PlayerOneSum > PlayerThreeSum)
+        {
+            highest = 1;
+        }
+
+        if(PlayerTwoSum > PlayerOneSum && PlayerTwoSum >PlayerThreeSum)
+        {
+            highest = 2;
+        }
+
+        if(PlayerThreeSum > PlayerOneSum && PlayerThreeSum > PlayerTwoSum)
+        {
+            highest = 3;
+        }
+
+        return highest;
+
+    }
+
+    static int[] getTheAverageOfEachArray(int [] numsOne, int [] numsTwo, int [] numsThree)
+    {
+        if(numsOne == null || numsOne.length == 0)
+        {
+            return new int[]{-1};
+        }
+
+        if(numsTwo == null || numsTwo.length == 0)
+        {
+            return new int[]{-1};
+        }
+
+        if(numsThree == null || numsThree.length == 0)
+        {
+            return new int[]{-1};
+        }
+
+        int [] newArray = new int[numsOne.length];
+
+        int length = 0;
+        int sum1 = 0;
+        int sum2 = 0;
+        int sum3 = 0;
+        int writeIndex = 0;
+        int index = 0;
+
+        if(numsOne.length > numsTwo.length && numsOne.length > numsThree.length)
+        {
+            length = numsOne.length;
+        }
+
+        if(numsTwo.length > numsOne.length && numsTwo.length > numsThree.length)
+        {
+            length = numsTwo.length;
+        }
+
+        if(numsThree.length > numsOne.length && numsThree.length > numsOne.length)
+        {
+            length = numsThree.length;
+        }
+
+        while(index < length)
+        {
+            if(index < numsOne.length)
+            {
+                sum1 = sum1 + numsOne[index];
+            }
+
+            if(index < numsTwo.length)
+            {
+                sum2 = sum2 + numsTwo[index];
+            }
+        
+            if(index < numsThree.length)
+            {
+                sum3 = sum3 + numsThree[index];
+            }
+
+            index = index + 1;
+                      
+        }
+
+        int averageOne = sum1 / numsOne.length;
+        int averageTwo = sum2 / numsTwo.length;
+        int averageThree = sum3 / numsThree.length;
+
+        newArray[writeIndex] = averageOne;
+        writeIndex++; 
+
+        newArray[writeIndex] = averageTwo;
+        writeIndex++; 
+
+        newArray[writeIndex] = averageThree;
+        writeIndex++;  
+
+        return newArray;
+    }
 
     static void printingArray(int [] nums)
     {
@@ -812,25 +940,25 @@ public class ArraysProblemOne
 
     public static void main(String[] args) 
     {
-        Scanner scanner = new Scanner(System.in);
+        // Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Enter the Size of the Array : ");
-        int size = scanner.nextInt();
+        // System.out.println("Enter the Size of the Array : ");
+        // int size = scanner.nextInt();
 
-        int array [] = new int[size];
+        // int array [] = new int[size];
 
-        // Input validation
-        if(size > 0)
-        {
+        // // Input validation
+        // if(size > 0)
+        // {
 
-            System.out.println("Enter the Elements of the Array : ");
+        //     System.out.println("Enter the Elements of the Array : ");
 
-            for(int index = 0; index < array.length; index = index + 1 )
-            {
-                array[index] = scanner.nextInt();
-            }
+        //     for(int index = 0; index < array.length; index = index + 1 )
+        //     {
+        //         array[index] = scanner.nextInt();
+        //     }
 
-        }
+        // }
 
         // ------------------------------ Method 1 --------------------------------------
 
@@ -983,6 +1111,24 @@ public class ArraysProblemOne
         // int result = savedCostOfShopAandShopB(ShopA, ShopB);
 
         // System.out.println("Amount Saved : " + result);
+
+        // ------------------------------- Method 24 -----------------------------------------
+
+        // int [] PlayerOne = {50, 10, 40};
+        // int [] playerTwo = {30, 45, 20};
+        // int [] playerThree = {25, 35, 30};
+
+        // int result = getTheHighestScore(PlayerOne, playerTwo, playerThree);
+        // System.out.println("The Highest Score of Player is : " + result);
+
+        // ------------------------------- Method 25 -----------------------------------------
+
+        int [] numsOne = {10, 20, 30};
+        int [] numsTwo = {5, 15};
+        int [] numsThree = {8, 8, 8, 8};
+
+        int result [] = getTheAverageOfEachArray(numsOne, numsTwo, numsThree);
+        printingArray(result);
 
     // scanner.close();
     }

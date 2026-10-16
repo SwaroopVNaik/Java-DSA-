@@ -2,7 +2,7 @@ import java.util.*;
 
 public class ArraysProblemOne 
 {
-
+    
     static int[] getCountOfOddOrEven(int [] nums)
     {
         // Test Cases

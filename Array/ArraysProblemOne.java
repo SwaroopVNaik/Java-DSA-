@@ -745,6 +745,56 @@ public class ArraysProblemOne
 
     }
 
+    static int savedCostOfShopAandShopB(int [] numsOne, int [] numsTwo)
+    {
+        if(numsOne == null || numsOne.length == 0)
+        {
+            return -1;
+        }
+
+        if(numsTwo == null || numsTwo.length == 0)
+        {
+            return -1;
+        }
+
+        int firstIndex = 0;
+        int secondIndex = 0;
+        int sum = 0;
+        int minimumSum = 0;
+        int saved = 0;
+
+        while(firstIndex < numsOne.length && secondIndex < numsTwo.length)
+        {
+            if(numsOne[firstIndex] < numsTwo[secondIndex])
+            {
+                minimumSum = minimumSum + numsOne[firstIndex];
+            }
+
+            if(numsTwo[secondIndex] < numsOne[firstIndex])
+            {
+                minimumSum = minimumSum + numsTwo[secondIndex];
+            }
+
+            firstIndex = firstIndex + 1;
+            secondIndex = secondIndex + 1;
+        }
+
+        firstIndex = 0;
+        while(firstIndex < numsOne.length)
+        {
+            sum = sum + numsOne[firstIndex];
+
+            firstIndex = firstIndex + 1;
+        } 
+
+        saved = sum - minimumSum;
+
+        return saved;
+
+    }
+
+
+
     static void printingArray(int [] nums)
     {
         System.out.print("[ ");
@@ -762,25 +812,25 @@ public class ArraysProblemOne
 
     public static void main(String[] args) 
     {
-        // Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
-        // System.out.println("Enter the Size of the Array : ");
-        // int size = scanner.nextInt();
+        System.out.println("Enter the Size of the Array : ");
+        int size = scanner.nextInt();
 
-        // int array [] = new int[size];
+        int array [] = new int[size];
 
-        // // Input validation
-        // if(size > 0)
-        // {
+        // Input validation
+        if(size > 0)
+        {
 
-        //     System.out.println("Enter the Elements of the Array : ");
+            System.out.println("Enter the Elements of the Array : ");
 
-        //     for(int index = 0; index < array.length; index = index + 1 )
-        //     {
-        //         array[index] = scanner.nextInt();
-        //     }
+            for(int index = 0; index < array.length; index = index + 1 )
+            {
+                array[index] = scanner.nextInt();
+            }
 
-        // }
+        }
 
         // ------------------------------ Method 1 --------------------------------------
 
@@ -916,26 +966,23 @@ public class ArraysProblemOne
 
         // int result [] = getBiggerNumberInNewArray(arrayOne, arrayTwo);
 
-        // for(int index : result)
-        // {
-        //     System.out.println(index + " ");
-        // }
+        // printingArray(result);
 
         // ------------------------------- Method 21 -----------------------------------------
 
-        // int [] arrayOne = {1, 4, 6, 8, 10};
+        // int [] arrayOne = {1, 4, 6, 8, 10, 90, 700, 90, 5000};
         // int [] arrayTwo = {4, 8, 12};
 
         // int result [] = getUniqueElements(arrayOne, arrayTwo);
-        // for(int index : result)
-        // {
-        //     System.out.println(index + " ");
-        // }
+        // printingArray(result);
 
         // ------------------------------- Method 22 -----------------------------------------
-        
 
-        
+        // int ShopA [] = {100, 250, 80, 40};
+        // int ShopB [] = {90, 260, 70, 45};
+        // int result = savedCostOfShopAandShopB(ShopA, ShopB);
+
+        // System.out.println("Amount Saved : " + result);
 
     // scanner.close();
     }

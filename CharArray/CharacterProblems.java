@@ -177,8 +177,8 @@ public class CharacterProblems
         
         // ------------------------------- Method 24 ---------------------------------------------
 
-        char letterOne [] = {'s', 'i', 'l', 'e', 'n', 't'};
-        char letterTwo [] = {'l', 'i', 's', 't', 'e', 'n'};
+        char letterOne [] = {'a', 'b', 'c', 'a', 'd', 'b'};
+        char letterTwo [] = {'b', 'a', 'd', 'c', 'b', 'e'};
 
         Boolean result = checkIfBothArraysAreSame(letterOne, letterTwo);
         System.out.println(result);

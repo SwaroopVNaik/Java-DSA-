@@ -183,6 +183,10 @@ public class CharacterProblems
 
         Boolean result = checkIfBothArraysAreSame(letterOne, letterTwo);
         System.out.println(result);
+
+        // ------------------------------- Method 23 ---------------------------------------------
+
+        
         
     }
 }

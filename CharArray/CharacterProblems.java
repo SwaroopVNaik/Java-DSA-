@@ -83,7 +83,7 @@ public class CharacterProblems
         return WinResult;
     }
 
-    static Boolean checkIfBothArraysAreSame(char [] letterOne, char[] letterTwo)
+    static boolean checkIfBothArraysAreSame(char [] letterOne, char[] letterTwo)
     {
         if(letterOne == null || letterOne.length == 0)
         {
@@ -100,32 +100,25 @@ public class CharacterProblems
             return false;
         }
 
-        Boolean sameletter = true;
+        boolean sameletter = true;
 
-        Boolean finalArray [] = new Boolean[letterOne.length];
-
-        int jindex = 0;
-
-        while(jindex < finalArray.length)
-        {
-            finalArray[jindex] = false;
-            jindex = jindex + 1;
-        }
+        boolean finalArray [] = new boolean[letterOne.length];
 
         int index = 0;
 
         while(index < letterOne.length)
         {
+            sameletter = false;
             int j = 0;
             while(j < letterTwo.length)
             {
                 if(letterOne[index] == letterTwo[j])
                 {
-                    sameletter = true;
 
                     if(sameletter == true)
                     {
                         finalArray[j] = true;
+                        sameletter = true;
                         break;
 
                     }
@@ -178,15 +171,15 @@ public class CharacterProblems
         
         // ------------------------------- Method 24 ---------------------------------------------
 
-        char letterOne [] = {'s','i','l','e','n','t'};
-        char letterTwo [] = {'l','i','s','t','e','n'};
+        char letterOne [] = {'a', 'b', 'c'};
+        char letterTwo [] = {'d', 'b', 'c'};
 
         Boolean result = checkIfBothArraysAreSame(letterOne, letterTwo);
         System.out.println(result);
 
         // ------------------------------- Method 23 ---------------------------------------------
 
-        
+
         
     }
 }

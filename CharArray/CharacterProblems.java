@@ -126,7 +126,8 @@ public class CharacterProblems
                     if(sameletter == true)
                     {
                         finalArray[j] = true;
-                        
+                        break;
+
                     }
 
                 }
@@ -177,8 +178,8 @@ public class CharacterProblems
         
         // ------------------------------- Method 24 ---------------------------------------------
 
-        char letterOne [] = {'a', 'b', 'c', 'a', 'd', 'b'};
-        char letterTwo [] = {'b', 'a', 'd', 'c', 'b', 'e'};
+        char letterOne [] = {'s','i','l','e','n','t'};
+        char letterTwo [] = {'l','i','s','t','e','n'};
 
         Boolean result = checkIfBothArraysAreSame(letterOne, letterTwo);
         System.out.println(result);

@@ -201,10 +201,15 @@ public class CharacterProblems
 
     static void htmlEncoding(char [] letter, int read, int write)
     {
+
+        if(letter == null || letter.length == 0)
+        {
+            return;
+        }
+        
         String user_Input = "02%";
         char [] message = user_Input.toCharArray();
 
-        
         while(read >= 0)
         {
             if(letter[read] == ' ')

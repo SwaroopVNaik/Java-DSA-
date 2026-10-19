@@ -164,9 +164,12 @@ public class CharacterProblems
             {
                 break;
             }
+            else
+            {
+                readindex++;
+            }
 
             index = index + 1;
-            readindex++;
         }
 
         readindex = readindex - 1;
@@ -190,16 +193,44 @@ public class CharacterProblems
         }
 
         int writeIndex = 0;
-        writeIndex = readindex + count * 3;
+        writeIndex = readindex + (count * 2);
 
         return writeIndex;
 
     }
 
-    // static char [] htmlEncoding(char [] letter, int read, int write)
-    // {
+    static void htmlEncoding(char [] letter, int read, int write)
+    {
+        String user_Input = "02%";
+        char [] message = user_Input.toCharArray();
+
         
-    // }
+        while(read >= 0)
+        {
+            if(letter[read] == ' ')
+            {
+                for(int jndex = 0; jndex < message.length; jndex = jndex + 1)
+                {
+                    letter[write] = message[jndex];
+                    write--;
+                }
+
+                read--;
+
+            }
+            else
+            {
+
+                letter[write] = letter[read];
+                write--;
+                read--;
+
+            }
+
+        }
+
+        printArray(letter);
+    }
 
 
 
@@ -256,11 +287,7 @@ public class CharacterProblems
         int write = getWriteIndex(newArray, read);
         // System.out.println(write);
 
-        // char result [] = htmlEncoding(newArray, read, write);
-
-
-
-        // printArray(result);
+        htmlEncoding(newArray, read, write);
 
         
     }

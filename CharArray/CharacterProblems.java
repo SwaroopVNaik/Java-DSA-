@@ -153,9 +153,64 @@ public class CharacterProblems
         return result;
     }
     
-    static void printArray()
+    static int getReadIndex(char [] letters)
     {
+        int readindex = 0;
+
+        int index = 0;
+        while(index < letters.length)
+        {
+            if(letters[index] == '\u0000')
+            {
+                break;
+            }
+
+            index = index + 1;
+            readindex++;
+        }
+
+        readindex = readindex - 1;
+
+        return readindex;
+    }
+
+    static int getWriteIndex(char [] letters, int readindex)
+    {
+        int count = 0;
+        int index = 0;
+
+        while(index < letters.length)
+        {
+            if(letters[index] == ' ')
+            {
+                count = count + 1;
+            }
+
+            index = index + 1;
+        }
+
+        int writeIndex = 0;
+        writeIndex = readindex + count * 3;
+
+        return writeIndex;
+
+    }
+
+    // static char [] htmlEncoding(char [] letter, int read, int write)
+    // {
         
+    // }
+
+
+
+    static void printArray(char [] letter)
+    {
+        int index = 0;
+        while(index < letter.length)
+        {
+            System.out.print(letter[index] + " ");
+            index = index + 1;
+        }
     }
 
     public static void main(String[] args) 
@@ -171,14 +226,41 @@ public class CharacterProblems
         
         // ------------------------------- Method 24 ---------------------------------------------
 
-        char letterOne [] = {'a', 'b', 'c'};
-        char letterTwo [] = {'d', 'b', 'c'};
+        // char letterOne [] = {'A', 'b', 'c'};
+        // char letterTwo [] = {'a', 'b', 'c'};
 
-        Boolean result = checkIfBothArraysAreSame(letterOne, letterTwo);
-        System.out.println(result);
+        // Boolean result = checkIfBothArraysAreSame(letterOne, letterTwo);
+        // System.out.println(result);
 
-        // ------------------------------- Method 23 ---------------------------------------------
+        // ------------------------------- Method Extra ---------------------------------------------
+        
+        char newArray [] = new char[40];
 
+        String message = "http://a.com/b from/ submit";
+        char letters [] = message.toCharArray();
+
+        int newIndex = 0;
+        int index = 0;
+        while(index < letters.length)
+        {
+            newArray[newIndex] = letters[index];
+            newIndex++;
+
+            index = index + 1;
+
+        }
+
+        int read = getReadIndex(newArray);
+        // System.out.println(read);
+
+        int write = getWriteIndex(newArray, read);
+        // System.out.println(write);
+
+        // char result [] = htmlEncoding(newArray, read, write);
+
+
+
+        // printArray(result);
 
         
     }

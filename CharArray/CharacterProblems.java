@@ -152,6 +152,8 @@ public class CharacterProblems
 
         return result;
     }
+  
+    // ------------------------------Special Problem------------------------------------
     
     static int getReadIndex(char [] letters)
     {
@@ -206,7 +208,7 @@ public class CharacterProblems
         {
             return;
         }
-        
+
         String user_Input = "02%";
         char [] message = user_Input.toCharArray();
 

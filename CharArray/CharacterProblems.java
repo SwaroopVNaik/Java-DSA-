@@ -394,6 +394,8 @@ public class CharacterProblems
         return count;
     }
 
+
+
     static void printArray(char [] letter)
     {
         int index = 0;
@@ -423,7 +425,7 @@ public class CharacterProblems
         // Boolean result = checkIfBothArraysAreSame(letterOne, letterTwo);
         // System.out.println(result);
 
-        // ------------------------------- Method Extra --------------------------------
+        // ------------------------------- HTML ENCODING --------------------------------
         
         // char newArray [] = new char[40];
 
@@ -467,11 +469,13 @@ public class CharacterProblems
 
         // ------------------------------- Method 21 ----------------------------------
 
-        char [] quizAnswer = {'A', 'C', 'B', 'D', 'A'};
-        char [] answerKey = {'A', 'B', 'B', 'D', 'C'};
+        // char [] quizAnswer = {'A', 'C', 'B', 'D', 'A'};
+        // char [] answerKey = {'A', 'B', 'B', 'D', 'C'};
 
-        int result = getScore(quizAnswer, answerKey);
-        System.out.println("The Quiz is result is : " + result);
+        // int result = getScore(quizAnswer, answerKey);
+        // System.out.println("The Quiz is result is : " + result);
+
+        // ------------------------------- Method 20 ----------------------------------
 
 
     }

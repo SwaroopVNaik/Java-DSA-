@@ -394,8 +394,6 @@ public class CharacterProblems
         return count;
     }
 
-
-
     static void printArray(char [] letter)
     {
         int index = 0;

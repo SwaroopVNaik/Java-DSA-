@@ -360,6 +360,40 @@ public class CharacterProblems
         return newArray;
     }
 
+    static int getScore(char [] quizAnswer, char[] answerKey)
+    {
+        if(quizAnswer == null || quizAnswer.length == 0)
+        {
+            return  -1;
+        }
+
+        if(answerKey == null || quizAnswer.length == 0)
+        {
+            return -1;
+        }
+
+        if(answerKey.length < quizAnswer.length || quizAnswer.length < answerKey.length)
+        {
+            return -1;
+        }
+
+        int count = 0;
+        int index = 0;
+        int jindex = 0;
+        while (index < answerKey.length && jindex < quizAnswer.length) 
+        {
+            if(answerKey[index] == quizAnswer[jindex])
+            {
+                count = count + 1;
+            }
+
+            index++;
+            jindex++;
+        }
+
+        return count;
+    }
+
     static void printArray(char [] letter)
     {
         int index = 0;
@@ -415,7 +449,7 @@ public class CharacterProblems
 
         // htmlEncoding(newArray, read, write);
 
-        // ------------------------------- Method 22 ----------------------------------
+        // ------------------------------- Method 23 ----------------------------------
 
         // char [] firstName = {'p', 'r', 'a', 'v', 'e', 'e', 'n'};
         // char [] secondName = {'M'};
@@ -423,7 +457,7 @@ public class CharacterProblems
         // char [] result = getFullName(firstName, secondName);
         // printArray(result);
 
-        // ------------------------------- Method 21 ----------------------------------
+        // ------------------------------- Method 22 ----------------------------------
 
         // char [] firstArray = {'A', 'b', '7', 'a', '#', 'M', 'b', '9', 'Z', '@', 'c', '7', 'X'};
         // char [] secondArray = {'b', 'Z', '9', '@', 'M', '7'};
@@ -431,11 +465,14 @@ public class CharacterProblems
         // char result [] = getUniquecharcters(firstArray, secondArray);
         // printArray(result);
 
-        // ------------------------------- Method 22 ----------------------------------
+        // ------------------------------- Method 21 ----------------------------------
 
         char [] quizAnswer = {'A', 'C', 'B', 'D', 'A'};
         char [] answerKey = {'A', 'B', 'B', 'D', 'C'};
 
-        
+        int result = getScore(quizAnswer, answerKey);
+        System.out.println("The Quiz is result is : " + result);
+
+
     }
 }

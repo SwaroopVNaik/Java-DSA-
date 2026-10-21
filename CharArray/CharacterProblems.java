@@ -377,22 +377,154 @@ public class CharacterProblems
             return -1;
         }
 
-        int count = 0;
+        int CorrectAnswercount = 0;
         int index = 0;
         int jindex = 0;
         while (index < answerKey.length && jindex < quizAnswer.length) 
         {
             if(answerKey[index] == quizAnswer[jindex])
             {
-                count = count + 1;
+                CorrectAnswercount = CorrectAnswercount + 1;
             }
 
             index++;
             jindex++;
         }
 
-        return count;
+        return CorrectAnswercount;
     }
+
+    static int getTheNumberOfPositonsWithSameCharacter(char [] wordOne, char [] wordTwo)
+    {
+
+        if(wordOne == null || wordOne.length == 0)
+        {
+            return -1;
+        }
+
+        if(wordTwo == null || wordTwo.length == 0)
+        {
+            return -1;
+        }
+
+        if(wordOne.length != wordTwo.length)
+        {
+            return -1;
+        }
+
+        int sameCharacterCount = 0;
+        int firstWordIndex = 0;
+        while(firstWordIndex < wordOne.length)
+        {
+            int secondWordIndex = 0;
+            while(secondWordIndex < wordTwo.length)
+            {
+                if(wordOne[firstWordIndex] == wordTwo[secondWordIndex])
+                {
+                    sameCharacterCount = sameCharacterCount + 1;
+                }
+
+                secondWordIndex = secondWordIndex + 1;
+
+            }
+
+            firstWordIndex = firstWordIndex + 1;
+        }
+
+        return sameCharacterCount;
+    }
+
+    static boolean checkIfTheWordReadsSameForwardAndBackward(char [] word)
+    {
+        if(word == null || word.length == 0)
+        {
+            return false;
+        }
+
+        boolean result = true;
+        int startIndex = 0;
+        int lastIndex = word.length - 1;
+
+        while(startIndex <= word.length && lastIndex >= 0)
+        {
+            if(word[startIndex] >= 'A' && word[startIndex] <= 'Z')
+            {
+                word[startIndex] = (char) (word[startIndex] - 'A' + 'a');
+            }
+
+            if(word[lastIndex] >= 'A' && word[lastIndex] <= 'Z')
+            {
+                word[lastIndex] = (char) (word[lastIndex] - 'A' + 'a');
+            }
+
+            if(word[startIndex] == word[lastIndex])
+            {
+                result = true;
+            }
+
+            if(word[startIndex] != word[lastIndex])
+            {
+                result = false;
+                break;
+            }
+
+            startIndex = startIndex + 1;
+            lastIndex = lastIndex - 1;
+        }
+
+        return result;
+
+    }
+
+    static int [] getPostionOfGivenLetter(char [] word, char key)
+    {
+        int count = 0;
+        int index = 0;
+        while(index < word.length)
+        {
+            if(word[index] == key)
+            {
+                count = count + 1;
+            }
+
+            index = index + 1;
+        }
+
+        int [] resultArray = new int [count];
+        int resultIndex = 0;
+
+        index = 0;
+        while(index < word.length)
+        {
+            if(word[index] == key)
+            {
+                resultArray[resultIndex] = index;
+                resultIndex++;
+            }
+
+            index = index + 1;
+        }
+
+        return resultArray;
+
+    }
+
+    // static char [] getIncrementedData(char [] letters)
+    // {
+    //     if(letters == null || letters.length == 0)
+    //     {
+    //         return new char[]{' '};
+    //     }
+
+    //     int index = 0;
+    //     while(index < letters.length)
+    //     {
+    //         if(letters[index]  >= 'A' && letters[index] < 'Z')
+    //         {
+                
+    //         }
+    //     }
+    // }
 
     static void printArray(char [] letter)
     {
@@ -404,8 +536,21 @@ public class CharacterProblems
         }
     }
 
+    static void printArrayint(int [] letter)
+    {
+        int index = 0;
+        while(index < letter.length)
+        {
+            System.out.print(letter[index] + " ");
+            index = index + 1;
+        }
+    }
+
+
     public static void main(String[] args) 
     {
+        Scanner scanner = new Scanner(System.in);
+
         // ------------------------------- Method 25 ---------------------------------------------
 
         // char BoothOne [] = {'A', 'A', 'B', 'B', 'B'};
@@ -474,6 +619,32 @@ public class CharacterProblems
         // System.out.println("The Quiz is result is : " + result);
 
         // ------------------------------- Method 20 ----------------------------------
+        // char [] wordOne = {'r', 'o', 'h', 'a', 'n', 't', 'h'};
+        // char [] wordTwo = {'p', 'a', 'r', 'v', 'e', 'e', 'n'};
+
+        // int result = getTheNumberOfPositonsWithSameCharacter(wordOne, wordTwo);
+        // System.out.println(result);
+
+        // ------------------------------- Method 19 ----------------------------------
+
+        // char [] word = {'C', 'I', 'V', 'I', 'C'};
+        // boolean result = checkIfTheWordReadsSameForwardAndBackward(word);
+        // System.out.println(result);
+
+        // ------------------------------- Method 18 ----------------------------------
+
+        // char [] word = {'r', 'o', 'h', 'a', 'n', 't', 'h'};
+        // char key = 'h';
+
+        // int [] position = getPostionOfGivenLetter(word, key);
+        // printArrayint(position);
+        
+        // ------------------------------- Method 19 ----------------------------------
+
+        // char [] letters = {'c', 'a', 't', 'z'};
+        // char [] resultLetters = getIncrementedData(letters);
+        // printArray(resultLetters);
+
 
 
     }

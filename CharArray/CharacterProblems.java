@@ -509,22 +509,47 @@ public class CharacterProblems
 
     }
 
-    // static char [] getIncrementedData(char [] letters)
-    // {
-    //     if(letters == null || letters.length == 0)
-    //     {
-    //         return new char[]{' '};
-    //     }
+    static char [] getIncrementedData(char [] letters)
+    {
+        if(letters == null || letters.length == 0)
+        {
+            return new char[]{' '};
+        }
 
-    //     int index = 0;
-    //     while(index < letters.length)
-    //     {
-    //         if(letters[index]  >= 'A' && letters[index] < 'Z')
-    //         {
-                
-    //         }
-    //     }
-    // }
+        int index = 0;
+        while(index < letters.length)
+        {
+
+            if(letters[index] >= '0' && letters[index] <= '9')
+            {
+                return new char[]{' '};
+            }
+
+            if(letters[index]  >= 'A' && letters[index] < 'Z')
+            {
+                letters[index] = (char) (letters[index] + 1);
+            }
+
+            if(letters[index] >= 'a' && letters[index] < 'z')
+            {
+                letters[index] = (char) (letters[index] + 1);
+            }
+
+            if(letters[index] == 'Z')
+            {
+                letters[index] = 'A';
+            }
+
+            if(letters[index] == 'z')
+            {
+                letters[index] = 'a';
+            }
+
+            index = index + 1;
+        }
+
+        return letters;
+    }
 
     static void printArray(char [] letter)
     {
@@ -641,7 +666,7 @@ public class CharacterProblems
         
         // ------------------------------- Method 19 ----------------------------------
 
-        // char [] letters = {'c', 'a', 't', 'z'};
+        // char [] letters = {'a', 'b', 'c', 's'};
         // char [] resultLetters = getIncrementedData(letters);
         // printArray(resultLetters);
 

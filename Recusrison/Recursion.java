@@ -35,7 +35,7 @@ public class Recursion {
             fun(n - 1);
 
             // after
-            System.out.println();
+            System.out.println(n);
         }
     }
 

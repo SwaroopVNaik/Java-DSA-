@@ -551,6 +551,141 @@ public class CharacterProblems
         return letters;
     }
 
+    boolean checkTheMobileNumber(char [] Mobilenumber)
+    {
+
+        if(Mobilenumber == null || Mobilenumber.length == 0)
+        {
+            return false;
+        }
+
+        boolean result = true;
+        int count = 0;
+        int index = 0;
+        while(index < Mobilenumber.length)
+        {
+            if (Mobilenumber[index] >= '0' && Mobilenumber[index] <= '9') 
+            {
+                result = true;
+            } 
+            else 
+            {
+                result = false;
+            }
+
+            if(result == true)
+            {
+                count = count + 1;
+            }
+
+            if(count == 10)
+            {
+                result = true;
+            }
+            else
+            {
+                result = false;
+            }
+
+            index = index + 1;
+        }
+
+        return result;
+    }
+
+    int [] getCountOfSignals(char [] trafficSignals)
+    {
+        if(trafficSignals == null || trafficSignals.length == 0)
+        {
+            return new int[]{0, 0, 0};
+        }
+
+       int redCount = 0;
+       int yellowCount = 0;
+       int greenCount = 0;
+
+       int trafficCount [] = new int[3];
+       int trafficIndex = 0;
+
+       int index = 0;
+       while(index < trafficSignals.length)
+       {
+            if(trafficSignals[index] == 'R' || trafficSignals[index] == 'r')
+            {
+                redCount = redCount + 1;
+            }
+
+            if(trafficSignals[index] == 'y' || trafficSignals[index] == 'Y')
+            {
+                yellowCount = yellowCount + 1;
+            }
+
+            if(trafficSignals[index] == 'g' || trafficSignals[index] == 'G')
+            {
+                greenCount = greenCount + 1;
+            }
+
+            index = index + 1;
+       }
+
+       trafficCount[trafficIndex] = redCount;
+       trafficIndex++;
+
+       trafficCount[trafficIndex] = yellowCount;
+       trafficIndex++;
+
+       trafficCount[trafficIndex] = greenCount;
+       trafficIndex++;
+
+       return trafficCount;
+    }
+    
+    static int getSumOfAllTheDigits(char [] MixtureOfDigitsandAlpha)
+    {
+        if(MixtureOfDigitsandAlpha == null || MixtureOfDigitsandAlpha.length == 0)
+        {
+            return 0;
+        }
+
+        int sum = 0;
+        int index = 0;
+
+        while (index < MixtureOfDigitsandAlpha.length) 
+        {
+            if(MixtureOfDigitsandAlpha[index] >= '0' && MixtureOfDigitsandAlpha[index] <= '9')
+            {
+                sum = sum + MixtureOfDigitsandAlpha[index] - '0';
+            }
+
+            index = index + 1;
+        }
+
+        return sum;
+    }
+
+    static int getNumberOfStudentsGotAGrade(char [] grades)
+    {
+        if(grades == null || grades.length == 0)
+        {
+            return 0;
+        }
+
+        int CountGradeA = 0;
+        int index = 0;
+
+        while(index < grades.length)
+        {
+            if(grades[index] == 'A' || grades[index] == 'a')
+            {
+                CountGradeA = CountGradeA + 1;
+            }
+
+            index = index + 1;
+        }
+
+        return CountGradeA;
+    }
+
     static void printArray(char [] letter)
     {
         int index = 0;
@@ -570,7 +705,6 @@ public class CharacterProblems
             index = index + 1;
         }
     }
-
 
     public static void main(String[] args) 
     {
@@ -664,11 +798,52 @@ public class CharacterProblems
         // int [] position = getPostionOfGivenLetter(word, key);
         // printArrayint(position);
         
-        // ------------------------------- Method 19 ----------------------------------
+        // ------------------------------- Method 17 ----------------------------------
 
         // char [] letters = {'a', 'b', 'c', 's'};
         // char [] resultLetters = getIncrementedData(letters);
         // printArray(resultLetters);
+
+        // ------------------------------- Method 16 ----------------------------------
+
+        // char [] Mobilenumber = {'9','8','4','5','0','1','2','3'};
+
+        // CharacterProblems object = new CharacterProblems();
+
+        // boolean result = object.checkTheMobileNumber(Mobilenumber);
+
+        // System.out.println(result);
+
+        // ------------------------------- Method 15 -----------------------------------
+
+        // char [] trafficSignals = {'R','G','G','y','R','G'};
+
+        // CharacterProblems object = new CharacterProblems();
+
+        // int [] result = object.getCountOfSignals(trafficSignals);
+        // printArrayint(result);
+
+        // ------------------------------- Method 14 ------------------------------------
+
+        // char [] MixtureOfDigitsandAlpha = {'a','3','b','7','2'};
+
+        // int result = getSumOfAllTheDigits(MixtureOfDigitsandAlpha);
+        // System.out.println(result);
+
+        // ------------------------------- Method 13 ------------------------------------
+
+        // char [] grades = {'A','B','A','C','A','B'};
+        // int result = getNumberOfStudentsGotAGrade(grades);
+        // System.out.println(result);
+
+        // ------------------------------- Method 12 ------------------------------------
+
+        // char [] letters = {'d', 'o', 'g', 's'};
+        
+
+
+
+
 
 
 

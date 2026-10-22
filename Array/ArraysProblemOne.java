@@ -39,7 +39,7 @@ public class ArraysProblemOne
             return -1;
         }
 
-        int sum = 0;
+        double sum = 0;
         double average = 0;
 
         int index = 0;
@@ -51,7 +51,7 @@ public class ArraysProblemOne
             index = index + 1;
         }
 
-        average = (double) sum / nums.length;
+        average = sum / nums.length;
 
         return average;
     }
@@ -60,7 +60,7 @@ public class ArraysProblemOne
     {
         if(nums == null || nums.length == 0)
         {
-            return new int[]{-1};
+            return new int[]{};
         }
 
         int count = 0;
@@ -88,15 +88,15 @@ public class ArraysProblemOne
         return updatedNum;
     }
 
-    static int getDifferenceFromMaxAndMin(int [] nums)
+    static long getDifferenceFromMaxAndMin(int [] nums)
     {
         if(nums == null || nums.length == 0)
         {
-            return -1;
+            return 0;
         }
 
-        int max = nums[0];
-        int min = nums[0];
+        long max = nums[0];
+        long min = nums[0];
         int index = 0;
 
         while(index < nums.length)
@@ -121,7 +121,7 @@ public class ArraysProblemOne
         // testCases
         if(nums == null || nums.length == 0)
         {
-            return -1;
+            return 0;
         }
 
         int studentsPassedCount = 0;

@@ -15,104 +15,84 @@ public class RecursionThree {
      // Print n to 1 using recursion
     static void printV1(int i)
     {
-        if(i > 0)
+        if(i == 0)
         {
-            System.out.print(i + " ");
-            printV1(i - 1);
+            return;
         }
+        System.out.print(i + " ");
+        printV1(i - 1);
     }
 
     // 2) count function calls
-    static int functionCallsCounter = 0;
     static int printFunctionCalls(int n)
     {
-        if(n > 0)
+        if(n == 0)
         {
-            functionCallsCounter = functionCallsCounter + 1;
-            printFunctionCalls(n - 1);
+            return 0;
         }
+        
+        return 1 + printFunctionCalls(n - 1);
 
-        return functionCallsCounter;
     }
 
     // 3) sum of n numbers 
-    static int sum = 0;
     static int printSumOfNumbers(int n)
     {
-        if(n > 0)
+        if(n == 0)
         {
-            sum = sum + n;
-            printSumOfNumbers(n - 1);
+            return 0;
         }
 
-        return sum;
+        return n + printSumOfNumbers(n - 1);
     }
 
     // 4) Factorial
-    static int FactorialNumber = 1;
     static int printFactorial(int number)
     {
-        if(number > 0)
+        if(number == 1)
         {
-            FactorialNumber = FactorialNumber * number;
-            printFactorial(number - 1);
+            return number;
         }
 
-        return FactorialNumber;
+        return number * printFactorial(number - 1);
     }
 
     // 5) Power Of Numbers
-    static int result = 1;
     static int printPowerOfNumber(int base, int power)
     {
-        if(power > 0)
+        if(power == 1)
         {
-            result = result * base;
-            printPowerOfNumber(base, power - 1);
+            return base;   
         }
 
-        return result;
+        return base * printPowerOfNumber(base, power - 1);
+
+        
     }
 
-    static int lastDigit = 0;
-    static int sumv1 = 0;
+    // sum of digits
     static int printSumOfDigits(int number)
     {
-        if(number > 0)
-        {
-            // getting last Digit
-            lastDigit = number % 10;
-
-            // Adding the Digits
-            sum = sum + lastDigit;
-
-            // Updating / removing the value from number after finding the sum
-            printSumOfDigits(number / 10);
-
+        if(number == 0)
+        { 
+            return number;
         }
 
-        return sum;
+
+        return number % 10 + printSumOfDigits(number / 10);
+
     }
 
     // 7) Reverse a number
-    static int lastDigitV2 = 0;
-    static int reverseNumber = 0;
-
-    static int getReverseNumber(int number)
+    static int getReverseNumber(int number, int Reverse)
     {
-        if(number > 0)
+        if(number == 0)
         {
-            // Get the last digit from the end
-            lastDigitV2 = number % 10;
+            return Reverse;
+        }        
 
-            // Storing that last Digit
-            reverseNumber = reverseNumber * 10 + lastDigitV2;
-
-            // Update the number
-            getReverseNumber(number / 10);
-        }
-
-        return reverseNumber;
+        return getReverseNumber(number / 10, Reverse * 10 + number % 10);
+        
     }
 
     // Given n = 5, print the numbers in this order.
@@ -275,8 +255,10 @@ public class RecursionThree {
         // System.out.println(result);
 
         // 7) Reverse a number
-        // int result = getReverseNumber(123);
+        // int result = getReverseNumber(123, 0);
         // System.out.println(result);
+
+        // ------------------------------------- extra --------------------------------------------
 
         // 8) print numbers in different order
         // printNumberBackwardandReverse(5);
@@ -305,18 +287,18 @@ public class RecursionThree {
         // System.out.println(checkIfTheArrayIsInAscendingOrder(numbers, index)); 
 
         // 13) Remove Specific Character
-        char [] letters = {'p', 'r', 'o', 'g', 'r', 'a', 'm'};
-        int index = 0;
-        char removeletter = 'r';
-        removeSpecificCharcater(letters, removeletter, index);
-        char [] result = getFinalArrayOfRemovedSpecificCharacter(removeletter, letters, letters, index, index);
+        // char [] letters = {'p', 'r', 'o', 'g', 'r', 'a', 'm'};
+        // int index = 0;
+        // char removeletter = 'r';
+        // removeSpecificCharcater(letters, removeletter, index);
+        // char [] result = getFinalArrayOfRemovedSpecificCharacter(removeletter, letters, letters, index, index);
 
-        while (index < result.length) 
-        {
-            System.out.print(result[index] + " ");
+        // while (index < result.length) 
+        // {
+        //     System.out.print(result[index] + " ");
 
-            index = index + 1;
-        }
+        //     index = index + 1;
+        // }
     }
 
 }

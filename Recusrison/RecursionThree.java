@@ -1,5 +1,3 @@
-package Recusrison;
-
 public class RecursionThree {
 
     static void print(int i)

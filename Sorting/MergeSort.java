@@ -30,7 +30,7 @@ public class MergeSort {
         int [] tempArray = new int[end - start + 1];
         int tempIndex = 0;
 
-        // initializing the start of the two pointers(index , jindex)
+        // initializing two pointers(index , jindex) for temp Array
         int index = start;
         int jndex = mid + 1;
 

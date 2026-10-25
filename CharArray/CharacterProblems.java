@@ -686,6 +686,7 @@ public class CharacterProblems
         return CountGradeA;
     }
 
+
     static void printArray(char [] letter)
     {
         int index = 0;
@@ -839,6 +840,14 @@ public class CharacterProblems
         // ------------------------------- Method 12 ------------------------------------
 
         // char [] letters = {'d', 'o', 'g', 's'};
+
+        // ------------------------------- Method 13 -----------------------------------
+
+        // char [] letters = {'p','r','o','g','r','a','m'};
+        // char [] result = getConstants(letters);
+        // printArray(letters);
+
+
         
 
 

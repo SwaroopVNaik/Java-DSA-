@@ -4,7 +4,7 @@ public class MergeSort {
 
     static void mergeSort(int [] numbers, int start, int end)
     {
-        // Edge Cases
+        // Edge Case
         if(numbers == null || numbers.length == 0 || numbers.length == 1)
         {
             return;

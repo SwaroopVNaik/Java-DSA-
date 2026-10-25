@@ -11,21 +11,24 @@ public class BubbleSort {
 
         int temp = 0;
 
-        // Just for number of interations
-        for(int index = 0; index < nums.length; index = index + 1)
+        int index = 0;
+        while(index < nums.length)
         {
-            for(int jindex = 0; jindex < nums.length - 1; jindex = jindex + 1)
+            int jindex = 0;
+            while(jindex < nums.length - 1)
             {
-                // comparisonn logic
                 if(nums[jindex] > nums[jindex + 1])
                 {
-                    // swapping
-                    temp = nums[jindex + 1];
-                    nums[jindex + 1] = nums[jindex];
-                    nums[jindex] = temp;
-
+                    temp = nums[jindex];
+                    nums[jindex] = nums[jindex + 1];
+                    nums[jindex + 1] = temp;
+                    
                 }
+
+                jindex = jindex + 1;
             }
+
+            index = index + 1;
         }
 
         printingArray(nums);
@@ -61,24 +64,30 @@ public class BubbleSort {
     // print Method
     static void printingArray(int [] nums)
     {
-        for (int values : nums)
+        System.out.print("[");
+        for (int index = 0; index < nums.length; index = index + 1)
         {
-            System.out.print(values + " , ");
+            System.out.print(nums[index]);
+
+            if(index < nums.length - 1)
+            {
+                System.out.print("|");
+            }
         }
-        System.out.println();
+        System.out.print("]");
     }
 
     public static void main(String[] args) {
 
-        int [] array = {5, 4, 3, 2, 1};
+        int [] array = {4, 1, 5, 2, 3};
 
-        // System.out.println("Before Sorting : ");
-        // printingArray(array);
+        System.out.println("Before Sorting : ");
+        printingArray(array);
 
-        // System.out.println("After Sorting : ");
-        // swapArrayElements(array);
+        System.out.println("\nAfter Sorting : ");
+        swapArrayElements(array);
 
-        comparisonOfElements(array);
+        // comparisonOfElements(array);
     }
 
 }

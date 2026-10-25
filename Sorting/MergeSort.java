@@ -20,6 +20,7 @@ public class MergeSort {
         // Seperating the rightHalf of the Array
         mergeSort(numbers, mid + 1, end);
 
+        // Sorting the elements
         merge(numbers, start, mid, end);
     }
 

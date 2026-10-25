@@ -686,6 +686,49 @@ public class CharacterProblems
         return CountGradeA;
     }
 
+    static char [] getConstants(char [] letters)
+    {
+        if(letters == null || letters.length == 0)
+        {
+            // return new char[]{' '};
+        }
+
+        int counter = 0;
+        int index = 0;
+        while(index < letters.length)
+        {
+            if((letters[index] != 'a' && letters[index] != 'A') && 
+               (letters[index] != 'e' && letters[index] != 'E') && 
+               (letters[index] != 'i' && letters[index] != 'I') && 
+               (letters[index] != 'o' && letters[index] != 'O') && 
+               (letters[index] != 'u' && letters[index] != 'U'))
+            {
+                counter = counter + 1;
+            }
+
+            index = index + 1;
+        }
+
+        char [] newArray = new char[counter];
+        int newIndex = 0;
+
+        index = 0;
+        while (index < letters.length) 
+        {
+            if((letters[index] != 'a' && letters[index] != 'A') && 
+               (letters[index] != 'e' && letters[index] != 'E') && 
+               (letters[index] != 'i' && letters[index] != 'I') && 
+               (letters[index] != 'o' && letters[index] != 'O') && 
+               (letters[index] != 'u' && letters[index] != 'U'))
+            {
+                newArray[newIndex ++ ] = letters[index];
+            }
+
+            index = index + 1;
+        }
+
+        return newArray;
+    }
 
     static void printArray(char [] letter)
     {
@@ -841,11 +884,13 @@ public class CharacterProblems
 
         // char [] letters = {'d', 'o', 'g', 's'};
 
-        // ------------------------------- Method 13 -----------------------------------
+        // ------------------------------- Method 11 -----------------------------------
 
-        // char [] letters = {'p','r','o','g','r','a','m'};
-        // char [] result = getConstants(letters);
-        // printArray(letters);
+        // char [] letters = {'s', 'w', 'a', 'r', 'o', 'o', 'p'};
+        // char result [] = getConstants(letters);
+        // printArray(result);
+
+        // ------------------------------- Method 10 -----------------------------------
 
 
         

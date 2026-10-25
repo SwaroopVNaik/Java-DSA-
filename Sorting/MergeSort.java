@@ -4,6 +4,12 @@ public class MergeSort {
 
     static void mergeSort(int [] numbers, int start, int end)
     {
+        
+        if(numbers == null || numbers.length == 0 || numbers.length == 1)
+        {
+            return;
+        }
+
         // Stop case : stop when start >= end
         // continue until start < end
         if(start >= end)

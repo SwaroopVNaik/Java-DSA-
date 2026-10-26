@@ -53,6 +53,71 @@ public class TestProblemOne {
         return new int[]{values.length};
     }
 
+    static int countEvenNumberOfDigits(int [] numbers)
+    {
+        if(numbers == null || numbers.length == 0)
+        {
+            return 0;
+        }
+
+        int numbersCounter = 0;
+        int evenCouter = 0;
+        int lastDigit = 0;
+
+        int index = 0;
+        while(index < numbers.length)
+        {
+            if(numbers[index] < 0)
+            {
+                numbers[index] = numbers[index] * -1;
+            }
+
+            while(numbers[index] > 0)
+            {
+                lastDigit = numbers[index] % 10;
+
+                numbersCounter = numbersCounter + 1;
+
+                numbers[index] = numbers[index] / 10;
+            }
+
+            if(numbersCounter % 2 == 0)
+            {
+                evenCouter = evenCouter + 1;
+            }
+
+            index = index + 1;
+
+        }
+
+        return evenCouter;
+    }
+
+    static int [] concatinationOfArray(int [] numbers)
+    {
+        if(numbers == null || numbers.length == 0)
+        {
+            return new int[]{0, 0};
+        }
+
+        int [] newArray = new int[numbers.length * 2];
+
+        int index = 0;
+        int firstIndex = 0;
+        int secondIndex = numbers.length;
+        while (index < numbers.length) 
+        {
+            newArray[firstIndex ++] = numbers[index];
+
+            newArray[secondIndex ++ ] = numbers[index];
+
+            index = index + 1;
+        }
+
+        return newArray;
+    }
+
+
     public static void main(String[] args) {
         
 
@@ -65,13 +130,24 @@ public class TestProblemOne {
         //     System.out.print(index + " ");
         // }
 
-        int arr [] = searchInsertPosition(array, 17);
+        // int arr [] = searchInsertPosition(array, 17);
 
-        for(int index = 0; index < arr.length; index = index + 1)
-        {
-            System.out.print(arr[index] + " ");
-        }
+        // for(int index = 0; index < arr.length; index = index + 1)
+        // {
+        //     System.out.print(arr[index] + " ");
+        // }
+
+        // int Numbersarray [] = {555, 901, 482, 1771};
+        // int result = countEvenNumberOfDigits(Numbersarray);
+        // System.out.println(result);
+
+        // int numberArray [] = {1};
+        // int result [] = concatinationOfArray(numberArray);
+
+        // for(int index = 0; index < result.length ; index ++)
+        // {
+        //     System.out.print(result[index] + " ");
+        // }
 
     }
-
 }

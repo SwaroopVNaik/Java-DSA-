@@ -730,6 +730,66 @@ public class CharacterProblems
         return newArray;
     }
 
+    static int getcountNumberOfWordSperatedBySpace(char [] letters)
+    {
+
+        if(letters == null || letters.length == 0)
+        {
+            return 0;
+        }
+
+        int countWords = 1;
+        int index = 0;
+        while(index < letters.length)
+        {
+            if(letters[index] == ' ')
+            {
+                countWords = countWords + 1;
+            }
+
+            index = index + 1;
+        }
+
+        return countWords;
+    }
+
+    static char [] replacingSpaceWithUnderScore(char [] letters)
+    {
+        if(letters == null || letters.length == 0)
+        {
+            return new char[]{' '};
+        }
+
+        int index = 0;
+        while(index < letters.length)
+        {
+            if(letters[index] == ' ')
+            {
+                letters[index] = '_';
+            }
+
+            index = index + 1;
+        }
+
+        return letters;
+
+    }
+
+    static boolean checkPassword(char [] letters)
+    {
+        if(letters == null || letters.length == 0)
+        {
+            return false;
+        }
+
+        // boolean isValidPassword = true;
+        // int index = 0;
+        // while(index < letters.length)
+        // {
+        //     if(letters[index] >= 'a' && letters[index] <= 'z')
+        // }
+    }
+
     static void printArray(char [] letter)
     {
         int index = 0;
@@ -892,11 +952,28 @@ public class CharacterProblems
 
         // ------------------------------- Method 10 -----------------------------------
 
+        // doudt question
 
-        
+        // ------------------------------- Method 9 -------------------------------------
 
+        // char [] letters = {'H','e','l','l','o',' ','W','o','r','l','d'};
+        // char [] letters = {'J','a','v','a',' ','i','s',' ','e','a','s','y'};
+        // char [] letters = {'C','o','d','i','n','g'};
+        // char [] letters = {'I', ' ', 'L','o','v', 'e', ' ', 'J', 'a', 'v', 'a'};
+        // int result = getcountNumberOfWordSperatedBySpace(letters);
+        // System.out.println("The number Of Words Seprated by space : " + result);
 
+        // ------------------------------- Method 8 -------------------------------------
 
+        // char [] letters = {'h','i',' ','t','h','e','r','e', ' '};
+        // char [] result = replacingSpaceWithUnderScore(letters);
+        // printArray(result);
+
+        // ------------------------------- Method 7 -------------------------------------
+
+        char [] letters = {'s','e','c','r','e','t','9','x'};
+        boolean result = checkPassword(letters);
+        System.out.println(result);
 
 
 

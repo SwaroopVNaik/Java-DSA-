@@ -149,6 +149,69 @@ public class RighttoLeft
         return newArray;
     }
 
+    static void getGreatestElementToRight(int [] numbers)
+    {
+        //pending
+    }
+
+    static void reverseTheArray(int [] numbers)
+    {
+        if(numbers == null || numbers.length == 0)
+        {
+            return;
+        }
+
+        int index = 0;
+        int j = numbers.length - 1;
+
+        while(index <= j)
+        {
+            int temp = numbers[index];
+            numbers[index] = numbers[j];
+            numbers[j] = temp;
+
+            index = index + 1;
+            j = j - 1;
+        }
+
+        return;
+    }
+
+    static void moveZeroesFront(int [] numbers)
+    {
+        if(numbers == null || numbers.length == 0)
+        {
+            return;
+        }
+
+        int index = 0;
+        int j = numbers.length - 1;
+
+        while (index < j) 
+        {
+            if((numbers[index] > 0 || numbers[index] < 0) && numbers[j] == 0)
+            {
+                int temp = numbers[index];
+                numbers[index] = numbers[j];
+                numbers[j] = temp;
+
+                index = index + 1;
+            }
+
+            if(numbers[index] == 0)
+            {
+                index = index + 1;
+            }
+
+            if(numbers[j] > 0 || numbers[j] < 0)
+            {
+                j = j - 1;
+            }
+        }
+
+        return;
+    }
+
     public static void main(String[] args) 
     {
         // int numbers [] = {3, 8, 5, 12, 7, 4, 9, 6};
@@ -191,6 +254,39 @@ public class RighttoLeft
         // while (index < result.length) 
         // {
         //     System.out.print(result[index] + " ");
+
+        //     index = index + 1;
+        // }
+
+        // int [] numbers = {18, 17, 5, 4, 6, 1};
+        // int result [] = getGreatestElementToRight(numbers);
+
+        // int index = 0;
+        // while (index < result.length) 
+        // {
+        //     System.out.print(result[index] + " ");
+
+        //     index = index + 1;
+        // }
+
+        // int [] numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        // reverseTheArray(numbers);
+
+        // int index = 0;
+        // while (index < numbers.length) 
+        // {
+        //     System.out.print(numbers[index] + " ");
+
+        //     index = index + 1;
+        // }
+
+        // int [] number = {0, 1, 0, 0, 2, 3};
+        // moveZeroesFront(number);
+        
+        // int index = 0;
+        // while (index < number.length) 
+        // {
+        //     System.out.print(number[index] + " ");
 
         //     index = index + 1;
         // }

@@ -775,12 +775,12 @@ public class CharacterProblems
 
     }
 
-    static boolean checkPassword(char [] letters)
-    {
-        if(letters == null || letters.length == 0)
-        {
-            return false;
-        }
+    // static boolean checkPassword(char [] letters)
+    // {
+    //     if(letters == null || letters.length == 0)
+    //     {
+    //         return false;
+    //     }
 
         // boolean isValidPassword = true;
         // int index = 0;
@@ -788,7 +788,7 @@ public class CharacterProblems
         // {
         //     if(letters[index] >= 'a' && letters[index] <= 'z')
         // }
-    }
+    // }
 
     static void printArray(char [] letter)
     {
@@ -972,8 +972,8 @@ public class CharacterProblems
         // ------------------------------- Method 7 -------------------------------------
 
         char [] letters = {'s','e','c','r','e','t','9','x'};
-        boolean result = checkPassword(letters);
-        System.out.println(result);
+        // boolean result = checkPassword(letters);
+        // System.out.println(result);
 
 
 

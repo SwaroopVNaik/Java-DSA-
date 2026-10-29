@@ -271,6 +271,7 @@ public class ListProblems {
         sixthNode2.data = 6;
         sixthNode2.next = null;
 
+        // small changesleft (unexpected output)
         int result = getTheValueOfMiddleNode(head);
         System.out.println("The Value Of the Middle Node : " + result);
 

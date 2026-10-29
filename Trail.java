@@ -1,12 +1,13 @@
 public class Trail {
 
-    static void abc()
+    static int abc()
     {
-        abc();
+        return 0;
     }
     public static void main(String[] args) {
 
-        abc();
+        return; 
+        // System.out.println(abc());
 
     }
     

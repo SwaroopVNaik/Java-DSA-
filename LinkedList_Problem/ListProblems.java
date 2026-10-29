@@ -4,25 +4,16 @@ public class ListProblems {
 
     static int getTheValueOfMiddleNode(Node head)
     {
+        // if list is empty
         if(head == null)
         {
             return 0;
         }
 
-        if(head.next == null)
-        {
-            return head.data;
-        }
-
-        if(head.next.next == null)
-        {
-            return head.next.data;
-        }
-
         Node currentHeadSlow = head;
-        Node currentHeadFast = head;
+        Node currentHeadFast = head; 
 
-        while(currentHeadSlow != null && currentHeadFast.next != null)
+        while(currentHeadFast != null && currentHeadFast.next != null)
         {
             currentHeadSlow = currentHeadSlow.next;
 
@@ -40,21 +31,21 @@ public class ListProblems {
             return 0;
         }
 
-        int result = 0;
-        int count = 1;
+        int evenValue = 0;
+        int evenPosition = 0;
         while (head != null) 
         {
-            if(count == 5)
+            if(head.data % 2 == 0)
             {
-                result = head.data;
+                evenValue = evenValue + 1;
             }
 
-            count = count + 1;
+            evenPosition = evenPosition + 1;
 
             head = head.next;
         }
 
-        return result;
+        return evenValue;
     }
 
     static int gettheNumberReversed(Node head)
@@ -64,25 +55,116 @@ public class ListProblems {
             return 0;
         }
 
-        int count = 0;
+        int lastDigit = 0;
 
-        while(head != null)
+        int number = 0;
+
+        int reverseNumber = 0;
+
+        Node currentHead = head;
+
+        while(currentHead != null)
         {
-            count = count + 1;
-            head = head.next;
+            number = (number * 10) + currentHead.data; 
+
+            currentHead = currentHead.next;
         }
 
-        int [] newArray = new int [count];
-        int newindex = 0;
-
-        while(head != null)
+        while (number > 0) 
         {
-            newArray[newindex ++] = head.data;
+            lastDigit = number % 10;
 
-            head = head.next;
+            reverseNumber = (reverseNumber * 10) + lastDigit;
+
+            number = number / 10;
         }
 
-        
+        return reverseNumber;
+    }
+
+    static boolean isPalindrome(Node head)
+    {
+        if(head == null)
+        {
+            return false;
+        }
+
+        boolean isPalindrome = false;
+
+        int number = 0;
+
+        int storeValue = 0;
+
+        int lastDigit = 0;
+
+        int reverseNumber = 0;
+
+        Node currentHead = head;
+
+        while(currentHead != null)
+        {
+            number = (number * 10) + currentHead.data;
+            storeValue = (storeValue * 10) + currentHead.data;
+            currentHead = currentHead.next;
+        }
+
+        while(number > 0)
+        {
+            lastDigit = number % 10;
+
+            reverseNumber = (reverseNumber * 10) + lastDigit;
+
+            number = number / 10;
+        }
+
+        if(storeValue == reverseNumber)
+        {
+            isPalindrome = true;
+        }
+        else
+        {
+            isPalindrome = false;
+        }
+
+        return isPalindrome;
+
+    }
+
+    static boolean checkIfBothListareSame(Node head, Node head2)
+    {
+
+        if(head == null)
+        {
+            return false;
+        }
+
+        if(head2 == null)
+        {
+            return false;
+        }
+
+        Node currentHeadOne = head;
+        Node currentHeadTwo = head;
+
+        boolean isSame = true;
+
+        while(currentHeadOne != null && currentHeadTwo !=  null)
+        {
+            if(currentHeadOne.data == currentHeadTwo.data)
+            {
+                isSame = true;
+            }
+            else
+            {
+                isSame = false;
+            }
+
+            currentHeadOne = currentHeadOne.next;
+
+            currentHeadTwo = currentHeadTwo.next;
+        }
+
+        return isSame;
 
     }
 
@@ -92,14 +174,14 @@ public class ListProblems {
 
         Node head = newNode;
 
-        newNode.data = 10;
+        newNode.data = 1;
         newNode.next = null;
 
         // head -> null
 
         Node secondNode = new Node();
 
-        secondNode.data = 20;
+        secondNode.data = 2;
         secondNode.next = null;
 
         // Connection list1 -> list2 -> null
@@ -107,7 +189,7 @@ public class ListProblems {
 
         Node thirdNode = new Node();
 
-        thirdNode.data = 30;
+        thirdNode.data = 3;
         thirdNode.next = null;
 
         // Connection list2 -> list3 -> null
@@ -115,7 +197,7 @@ public class ListProblems {
 
         Node fourthNode = new Node();
 
-        fourthNode.data = 40;
+        fourthNode.data = 4;
         fourthNode.next = null;
 
         // Connection list3 -> list4 -> null
@@ -123,7 +205,7 @@ public class ListProblems {
 
         Node fifthNode = new Node();
 
-        fifthNode.data = 50;
+        fifthNode.data = 5;
         fifthNode.next = null;
 
         // connection list4 -> list5 -> null
@@ -131,7 +213,7 @@ public class ListProblems {
 
         Node sixthNode = new Node();
 
-        sixthNode.data = 60;
+        sixthNode.data = 6;
         sixthNode.next = null;
 
         fifthNode.next = sixthNode;
@@ -139,13 +221,74 @@ public class ListProblems {
         // final Node
         // list1 -> list2 -> list3 -> list4 -> list5 -> null
 
-        // int result = getTheValueOfMiddleNode(head);
-        // System.out.println("The Value Of the Middle Node : " + result);
+        // second List
+        
+        Node NewNode2 = new Node();
 
-        int resultV1 = get5thEvenNumber(head);
-        System.out.println("The Fifth Even Number is : " + resultV1);
+        Node head2 = NewNode2;
 
-        int resultV2 = gettheNumberReversed(head);
+        NewNode2.data = 1;
+        NewNode2.next = null;
+
+        // head -> null
+
+        Node secondNode2 = new Node();
+
+        secondNode2.data = 2;
+        secondNode2.next = null;
+
+        NewNode2.next = secondNode2;
+
+        // 5 -> 4 -> null
+
+        Node thirdNode2 = new Node();
+
+        thirdNode2.data = 3;
+        thirdNode2.next = null;
+
+        secondNode2.next = thirdNode2;
+
+        // 5 -> 4 -> 3 -> null
+
+        Node fourthNode2 = new Node();
+
+        fourthNode2.data = 4;
+        fourthNode2.next = null;
+
+        thirdNode2.next = fourthNode2;
+
+        // 5 -> 4 -> 3 -> 2 -> null
+
+        Node fifthNode2 = new Node();
+
+        fifthNode2.data = 5;
+        fifthNode2.next = null;
+
+        fourthNode2.next = fifthNode2;
+
+        Node sixthNode2 = new Node();
+
+        sixthNode2.data = 6;
+        sixthNode2.next = null;
+
+        int result = getTheValueOfMiddleNode(head);
+        System.out.println("The Value Of the Middle Node : " + result);
+
+        // int resultV1 = get5thEvenNumber(head);
+        // System.out.println("The Fifth Even Number is : " + resultV1);
+
+        // int resultV2 = gettheNumberReversed(head);
+
+        // System.out.println("\nThe Reverse Number : " + resultV2);
+
+        // boolean resultV3 = isPalindrome(head);
+
+        // System.out.println("\nIs it a palindrome List : " + resultV3);
+
+        // boolean resultV4 = checkIfBothListareSame(head, head2);
+
+        // System.out.println("\nBoth List are same : " + resultV4);
+
     }
 
 }

@@ -965,13 +965,13 @@ public class CharacterProblems
 
         // ------------------------------- Method 8 -------------------------------------
 
-        // char [] letters = {'h','i',' ','t','h','e','r','e', ' '};
-        // char [] result = replacingSpaceWithUnderScore(letters);
-        // printArray(result);
+        char [] letters = {'h','i',' ','t','h','e','r','e', ' '};
+        char [] result = replacingSpaceWithUnderScore(letters);
+        printArray(result);
 
         // ------------------------------- Method 7 -------------------------------------
 
-        char [] letters = {'s','e','c','r','e','t','9','x'};
+        // char [] letters = {'s','e','c','r','e','t','9','x'};
         // boolean result = checkPassword(letters);
         // System.out.println(result);
 

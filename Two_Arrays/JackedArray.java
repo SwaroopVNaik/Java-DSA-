@@ -4,15 +4,17 @@ class JackedArray {
 
     public static void main(String[] args) 
     {
-        char A[][];
+        // 2D Array Declaration
+        int  A[][];
 
-        A = new char[3][];
+        // Jacked Array !
+        A = new int[3][];
 
-        A[0] = new char[5];
-        A[1] = new char[3];
-        A[2] = new char[8];
+        A[0] = new int [5];
+        A[1] = new int [3];
+        A[2] = new int [8];
 
-        char x  = 'S';
+        int x  = 1;
 
         for(int i = 0 ; i < A.length; i ++)
         {
@@ -20,6 +22,7 @@ class JackedArray {
             {
                 A[i][j] = x;
                 System.out.print(A[i][j] + " ");
+                x++;
             }
             System.out.println();
         }

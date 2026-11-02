@@ -85,10 +85,37 @@ public class TwoDtwo
     static void printingRightToleft(int [][] data)
     {
         int collength = data.length - 1;
-        System.out.println("Printing right to left ");
+        System.out.println("\nPrinting right to left ");
+        System.out.println();
         for(int row = 0; row <= collength; row = row + 1)
         {
+            for(int space = 0; space < collength - row; space = space + 1)
+            {
+                System.out.print(" ");
+            }
+
             System.out.println(data[row][collength - row]);
+        }
+    }
+
+    static void printingLefttoRightAndRightToLeft(int [][] data)
+    {
+        System.out.println("\nPrinting left to right and right to left : ");
+        int collength = data.length;
+        for(int row = 0; row < data.length; row = row + 1)
+        {
+            for(int col = 0; col < data[row].length; col = col + 1)
+            {
+                if(row == col)
+                {
+                    System.out.print(data[row][col]);
+                }
+                else
+                {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
         }
     }
 
@@ -96,19 +123,19 @@ public class TwoDtwo
 
     public static void main(String[] args) 
     {
-        int [][] A = {{1, 2, 3}, {4, 5, 6}, {6, 7, 8}};
+        // int [][] A = {{1, 2, 3}, {4, 5, 6}, {6, 7, 8}};
 
         // printingTwoDimensionalArray(A);
 
-        int data[][] = {
+        // int data[][] = {
 
-            {11, 12, 13, 14, 15},
-            {21, 22, 23, 24, 25},
-            {31, 32},
-            {41, 42, 43, 44, 45},
-            {51, 52}
+        //     {11, 12, 13, 14, 15},
+        //     {21, 22, 23, 24, 25},
+        //     {31, 32},
+        //     {41, 42, 43, 44, 45},
+        //     {51, 52}
 
-        };
+        // };
 
         int dataV2[][] = {
 
@@ -141,7 +168,7 @@ public class TwoDtwo
 
         printingRightToleft(dataV2);
 
-        // printingLefttoRightAndRightToLeft(dataV2);
+        printingLefttoRightAndRightToLeft(dataV2);
 
     scanner.close();
     }

@@ -105,47 +105,11 @@ class TwoD {
 
         }
 
-        // Matrix Multiplication
+        // Print Elements Column by Column
 
-        System.out.println("\nMultipliction of 2D Array : ");
+        int D[][] = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
 
-        index = 0;
-        while(index < B.length)
-        {
-            int jindex = 0;
-            while (jindex < B[index].length) 
-            {
-                System.out.print(B[index][jindex] + " ");
-
-                jindex = jindex + 1;
-            }
-            System.out.println();
-
-            index = index + 1;
-        }
-
-        System.out.println("*****");
-
-        int [][] D = {{9, 8, 7}, {6, 5, 4}, {3, 2, 1}};
-
-        index = 0;
-        while(index < D.length)
-        {
-            int jindex = 0;
-            while (jindex < D[index].length) 
-            {
-                System.out.print(D[index][jindex] + " ");
-
-                jindex = jindex + 1;
-            }
-            System.out.println();
-
-            index = index + 1;
-        }
-
-        System.out.println("======");
-
-        // pending
+        
 
     }
     

@@ -775,20 +775,29 @@ public class CharacterProblems
 
     }
 
-    // static boolean checkPassword(char [] letters)
-    // {
-    //     if(letters == null || letters.length == 0)
-    //     {
-    //         return false;
-    //     }
+    static boolean checkPassword(char [] letters)
+    {
+        if(letters == null || letters.length == 0)
+        {
+            return false;
+        }
 
-        // boolean isValidPassword = true;
-        // int index = 0;
-        // while(index < letters.length)
-        // {
-        //     if(letters[index] >= 'a' && letters[index] <= 'z')
-        // }
-    // }
+        boolean isValidPassword = true;
+        int Characterscount = 0;
+        int index = 0;
+        while(index < letters.length)
+        {
+            if((letters[index] >= 'a' && letters[index] <= 'z') ||
+              (letters[index] >= '0' && letters[index] <= '9'))
+            {
+                Characterscount = Characterscount + 1;
+            }
+
+            index = index + 1;
+        }
+
+        return isValidPassword;
+    }
 
     static void printArray(char [] letter)
     {
@@ -965,15 +974,15 @@ public class CharacterProblems
 
         // ------------------------------- Method 8 -------------------------------------
 
-        char [] letters = {'h','i',' ','t','h','e','r','e', ' '};
-        char [] result = replacingSpaceWithUnderScore(letters);
-        printArray(result);
+        // char [] letters = {'h','i',' ','t','h','e','r','e', ' '};
+        // char [] result = replacingSpaceWithUnderScore(letters);
+        // printArray(result);
 
         // ------------------------------- Method 7 -------------------------------------
 
-        // char [] letters = {'s','e','c','r','e','t','9','x'};
-        // boolean result = checkPassword(letters);
-        // System.out.println(result);
+        char [] letters = {'s','e','c','r','e','t','9','x'};
+        boolean result = checkPassword(letters);
+        System.out.println(result);
 
 
 

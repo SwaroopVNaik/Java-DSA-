@@ -188,18 +188,107 @@ public class Problems
     // Problem 4
     static int [][] getTheMainDiagnolMultiBy10(int [][] A, int scalar)
     {
+        int [][] B = new int[A.length][A[0].length];
         for(int row = 0; row < A.length; row = row + 1)
         {
             for(int col = 0; col < A[row].length; col = col + 1)
             {
                 if(row == col)
                 {
-                    A[row][col] = A[row][col] * scalar;
+                    B[row][col] = A[row][col] * scalar;
                 }
             }
         }
 
-        return A;
+        return B;
+    }
+
+    // Problem 5
+    static boolean searchElementInMainDiagnol(int [][] A, int key)
+    {
+        boolean found = true;
+        outer :
+        for(int row = 0; row < A.length; row = row + 1)
+        {
+            for(int col = 0; col < A[row].length; col = col + 1)
+            {
+                int number = A[row][col];
+
+                if(row == col && number == key)
+                {
+                    found = true;
+                    break outer;
+                }
+                else
+                {
+                    found = false;
+                }
+            }
+        }
+
+        return found;
+    }
+
+    // problem 6
+    static int [] getTheSumOfEachRow(int [][] A)
+    {
+        int sum = 0;
+        int [] newArray = new int[A[0].length];
+        int newIndex = 0;
+
+        for(int row = 0; row < A.length; row = row + 1)
+        {
+            for(int col = 0; col < A[row].length; col = col + 1)
+            {
+                sum = sum + A[row][col];
+            }
+
+            newArray[newIndex ++] = sum;
+            sum = 0;
+
+        }
+
+        return newArray;
+    }
+
+    // Problem 7
+    static int [] getTheSumOfEachCol(int [][] A)
+    {
+        int sum = 0;
+        int newArray [] = new int[A[0].length];
+        int newIndex = 0;
+        for(int col = 0; col < A[0].length; col = col + 1)
+        {
+            for(int row = 0; row < A.length; row = row + 1)
+            {
+                sum = sum + A[row][col];
+            }
+
+            newArray[newIndex ++] = sum;
+            sum = 0;
+
+        }
+
+        return newArray;
+    }
+
+    // Problem 8
+    static int getSumOfElementsGreaterThen50(int [][] A)
+    {
+        int sum = 0;
+
+        for(int row = 0; row < A.length; row = row + 1)
+        {
+            for(int col = 0; col < A[0].length; col = col + 1)
+            {
+                if(A[col][row] > 50)
+                {
+                    sum = sum + A[col][row];
+                }
+            }
+        }
+
+        return sum;
     }
 
     public static void main(String[] args) 
@@ -269,9 +358,17 @@ public class Problems
         int minEvenValue = getMinEvenValue(MatrixOne);
         System.out.println("\nThe Minimum Even Value is : " + minEvenValue);
 
+        System.out.println("\nBefore Multiplying Diagnol by 10 : ");
+        for(int x [] : MatrixOne)
+        {
+            for(int val :  x)
+            {
+                System.out.print(val + " ");
+            }
+            System.out.println();
+        }
         int [][] mainDiagnolResult = getTheMainDiagnolMultiBy10(MatrixOne, 10);
-        System.out.println("\nMultiplying Diagnol By 10");
-        System.out.println("[");
+        System.out.println("\nMultiplying Diagnol By 10 : ");
         for(int [] x : mainDiagnolResult)
         {
             for(int val : x)
@@ -280,9 +377,32 @@ public class Problems
             }
             System.out.println();
         }
+
+        boolean foundV2 = searchElementInMainDiagnol(MatrixOne, 6);
+        System.out.println("\nThe Key is found : " + foundV2);
+
+        int [] rowSum = getTheSumOfEachRow(MatrixOne);
+        System.out.println("\nThe Total of Each Rows : ");
+        System.out.print("[");
+        for(int val : rowSum)
+        {
+            System.out.print(val + " ");
+        }
         System.out.print("]");
 
+        int [] colSum = getTheSumOfEachCol(MatrixOne);
+        System.out.println("\nThe Total Of Each col :");
+        System.out.print("[");
+        for(int val : colSum)
+        {
+            System.out.print(val + " ");
+        }
+        System.out.print("]");
 
+        int [][] MatrixOneV2 = {{65, 7, 90}, {1, 2, 3}, {90, 100, 200}};
+
+        int sum = getSumOfElementsGreaterThen50(MatrixOneV2);
+        System.out.println("\nThe sum of elements greater then 50 : " + sum);
 
     }
 

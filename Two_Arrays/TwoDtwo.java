@@ -110,6 +110,10 @@ public class TwoDtwo
                 {
                     System.out.print(data[row][col]);
                 }
+                else if(row + col == collength - 1)
+                {
+                    System.out.print(data[row][col]);
+                }
                 else
                 {
                     System.out.print(" ");

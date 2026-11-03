@@ -10,7 +10,7 @@ public class TwoDtwo
         {
             for(int col = 0; col < A[row].length; col = col + 1)
             { 
-                System.out.print(A[row][col] + " ");
+                System.out.print(A[col][row] + " ");
             }
             System.out.println();
         }
@@ -125,9 +125,9 @@ public class TwoDtwo
     
     public static void main(String[] args) 
     {
-        // int [][] A = {{1, 2, 3}, {4, 5, 6}, {6, 7, 8}};
+        int [][] A = {{1, 2, 3}, {4, 5, 6}, {6, 7, 8}};
 
-        // printingTwoDimensionalArray(A);
+        printingTwoDimensionalArray(A);
 
         // int data[][] = {
 
@@ -166,11 +166,12 @@ public class TwoDtwo
 
         // printingCol(data, col);
 
-        printingleftTorRight(dataV2);
+        // printingleftTorRight(dataV2);
 
-        printingRightToleft(dataV2);
+        // printingRightToleft(dataV2);
 
-        printingLefttoRightAndRightToLeft(dataV2);
+        // printingLefttoRightAndRightToLeft(dataV2);
+
 
     scanner.close();
     }

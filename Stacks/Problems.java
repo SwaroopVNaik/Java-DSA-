@@ -98,7 +98,7 @@ public class Problems {
             if(ch == '(')
             {
                 mystack.push(ch);
-                continue;
+                // continue;
             }
             else if(ch == ')')
             {
@@ -138,8 +138,9 @@ public class Problems {
         System.out.print("]");
 
         // problem 3
-        String expression = "(2+(4+3)=";
+        String expression = "(2+(4+3))=";
         boolean resultv2 = isExpressionBalanced(expression);
+        System.out.println("\nThe Expression is : " + resultv2);
     }
 
 }

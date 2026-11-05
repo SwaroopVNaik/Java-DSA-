@@ -3,6 +3,19 @@ package Two_Arrays;
 public class Problems 
 {
 
+    // Printing Function
+    static void printTheMatrix(int [][] Matrix)
+    {
+        for(int row = 0; row < Matrix.length; row = row + 1)
+        {
+            for(int col = 0; col < Matrix[0].length; col = col + 1)
+            {
+                System.out.print(Matrix[row][col] + " ");
+            }
+            System.out.println();
+        }
+    }
+
     // Problem 1
     static void printSumOfElements(int [][] A)
     {
@@ -292,10 +305,30 @@ public class Problems
     }
 
     // Problem 9
-    // static int[][] swapTheMatrix(int [][] A)
-    // {
+    static void swapTheMatrix(int [][] A)
+    {
+        System.out.println("The Matrix before Swapping : ");
+        printTheMatrix(A);
 
-    // } 
+        for(int row = 0; row < A.length; row = row + 1)
+        {
+            int leftcol = 0;
+            int rightcol = A[0].length - 1;
+
+            while (leftcol < rightcol) 
+            {
+                int temp = A[row][leftcol];
+                A[row][leftcol] = A[row][rightcol];
+                A[row][rightcol] = temp;
+
+                leftcol ++;
+                rightcol--;
+            }
+        }
+
+        System.out.println("The Matrix After Swapping : ");
+        printTheMatrix(A);
+    } 
 
     public static void main(String[] args) 
     {
@@ -409,6 +442,8 @@ public class Problems
 
         int sum = getSumOfElementsGreaterThen50(MatrixOneV2);
         System.out.println("\nThe sum of elements greater then 50 : " + sum);
+
+        swapTheMatrix(MatrixOne);
 
     }
 

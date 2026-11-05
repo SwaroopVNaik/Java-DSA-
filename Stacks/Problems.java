@@ -81,6 +81,44 @@ public class Problems {
         return newArray;
     }
 
+    // Problem 3
+    static boolean isExpressionBalanced(String equation)
+    {
+        if(equation == null)
+        {
+            return false;
+        }
+
+        Stackcreation mystack = new Stackcreation(equation.length());
+        boolean isBalanced = true;
+
+        for(int index = 0; index < equation.length(); index = index + 1)
+        {
+            char ch = equation.charAt(index);
+            if(ch == '(')
+            {
+                mystack.push(ch);
+                continue;
+            }
+            else if(ch == ')')
+            {
+                if(mystack.peek() == -1)
+                {
+                    isBalanced = false;
+                    break;
+                }
+                mystack.pop();
+            }
+        }
+
+        if(mystack.peek() != -1)
+        {
+            isBalanced = false;
+        }
+
+        return isBalanced;
+    }
+
     public static void main(String[] args) 
     {
         // Problem 1
@@ -98,6 +136,10 @@ public class Problems {
             System.out.print(values + " ");
         }
         System.out.print("]");
+
+        // problem 3
+        String expression = "(2+(4+3)=";
+        boolean resultv2 = isExpressionBalanced(expression);
     }
 
 }

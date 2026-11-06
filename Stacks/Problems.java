@@ -82,14 +82,14 @@ public class Problems {
     }
 
     // Problem 3
-    static boolean isExpressionBalanced(String equation)
+    boolean isExpressionBalanced(String equation)
     {
         if(equation == null)
         {
             return false;
         }
 
-        Stackcreation mystack = new Stackcreation(equation.length());
+        StackcreationCharacter mystackV1 = new StackcreationCharacter(equation.length());
         boolean isBalanced = true;
 
         for(int index = 0; index < equation.length(); index = index + 1)
@@ -97,21 +97,21 @@ public class Problems {
             char ch = equation.charAt(index);
             if(ch == '(')
             {
-                mystack.push(ch);
+                mystackV1.push(ch);
                 // continue;
             }
             else if(ch == ')')
             {
-                if(mystack.peek() == -1)
+                if(mystackV1.peek() == -1)
                 {
                     isBalanced = false;
                     break;
                 }
-                mystack.pop();
+                mystackV1.pop();
             }
         }
 
-        if(mystack.peek() != -1)
+        if(mystackV1.peek() != -1)
         {
             isBalanced = false;
         }
@@ -137,9 +137,12 @@ public class Problems {
         }
         System.out.print("]");
 
+
         // problem 3
-        String expression = "(2+(4+3))=";
-        boolean resultv2 = isExpressionBalanced(expression);
+        String expression = "((a + 1) * (b - 2))";
+
+        Problems obj = new Problems();
+        boolean resultv2 = obj.isExpressionBalanced(expression);
         System.out.println("\nThe Expression is : " + resultv2);
     }
 

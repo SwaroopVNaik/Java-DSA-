@@ -330,6 +330,76 @@ public class Problems
         printTheMatrix(A);
     } 
 
+    // Problem 10
+    static int [][] getMultiplicationOfMatrix(int [][] A, int [][] B)
+    {
+        int [][] result = new int[A[0].length][A.length];
+
+        // edgecases
+        if(A == null || B == null)
+        {
+            return new int[][]{{-1, -1}, {-1, -1}};
+        }
+
+        if(A.length == 0 || B.length == 0)
+        {
+            return new int[][]{{-1, -1}, {-1, -1}};
+        }
+
+        for(int index = 0; index < A.length; index = index + 1)
+        {
+            for(int j = 0; j < B[0].length; j = j + 1)
+            {
+                for(int r = 0; r < A[0].length; r = r + 1)
+                {
+                    result[index][j] += A[index][r] * B[r][j];
+                }
+            }
+        }
+
+        return result;
+    }
+
+    // Problem 11
+    void printElementsCorner(int [][] A)
+    {
+        for(int row = 0; row < A.length; row = row + 1)
+        {
+            for(int col = 0; col < A[row].length; col = col + 1)
+            {
+                if((row > 0 && row < A.length - 1) || (col > 0 && col < A.length - 1) )
+                {
+                    System.out.print(" ");
+                }
+                else
+                {
+                    System.out.print(A[row][col] + " ");
+                }
+            }
+            System.out.println();
+        }
+    }
+
+    // Problem 12
+    void printelementsBoundary(int [][] A)
+    {
+        for(int row = 0; row < A.length; row = row + 1)
+        {
+            for(int col = 0; col < A[row].length; col = col + 1)
+            {
+                if((row > 0 && row < A.length - 1) && (col > 0 && col < A.length - 1) )
+                {
+                    System.out.print("  ");
+                }
+                else
+                {
+                    System.out.print(A[row][col] + " ");
+                }
+            }
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args) 
     {
 
@@ -444,6 +514,29 @@ public class Problems
         System.out.println("\nThe sum of elements greater then 50 : " + sum);
 
         swapTheMatrix(MatrixOne);
+
+        int [][] MatrixOneV3 = {{1, 0, 0}, {0, 1, 0}, {0, 0, 1}};
+
+        int MultiResultV2 [][] = getMultiplicationOfMatrix(MatrixOne, MatrixOneV3);
+
+        System.out.println("\nMatrix Multiplication Result : ");
+        for(int x [] : MultiResultV2)
+        {
+            for(int rr : x)
+            {
+                System.out.print(rr + " ");
+            }
+            System.out.println();
+        }
+
+
+        Problems obj = new Problems();
+
+        System.out.println("\nPrinting the Elements in The Corner : ");
+        obj.printElementsCorner(MatrixOne);
+
+        System.out.println("\nPrinting the ELements in The Boundry ");
+        obj.printelementsBoundary(MatrixOne);
 
     }
 

@@ -102,7 +102,7 @@ public class Problems {
             }
             else if(ch == ')')
             {
-                if(mystackV1.peek() == -1)
+                if(mystackV1.peek() == '*')
                 {
                     isBalanced = false;
                     break;
@@ -111,12 +111,65 @@ public class Problems {
             }
         }
 
-        if(mystackV1.peek() != -1)
+        if(mystackV1.peek() != '*')
         {
             isBalanced = false;
         }
 
         return isBalanced;
+    }
+
+    // Problem 4
+    boolean isExpressionBalancedV2(String equation)
+    {
+        if(equation == null)
+        {
+            // ask the Interviewer
+            return false;
+        }
+
+        StackcreationCharacter mystack = new StackcreationCharacter(equation.length());
+        boolean isBalanced = true;
+
+        for(int index = 0; index < equation.length(); index = index + 1)
+        {
+            char ch = equation.charAt(index);
+
+            if(ch == '(' || ch == '[' || ch == '{')
+            {
+                mystack.push(ch);
+            }
+            else if(ch == ')' || ch == ']' || ch == '}')
+            {
+                if
+                (
+                    (ch == ')' && mystack.peek() != '(') ||
+                    (ch == '}' && mystack.peek() != '{') ||
+                    (ch == ']' && mystack.peek() != '[')
+                )
+                {
+                    isBalanced = false;
+                    break;
+                }
+
+                if(mystack.peek() == '*')
+                {
+                    isBalanced = false;
+                    break;
+                }
+
+                mystack.pop();
+
+            }
+        }
+
+        if(mystack.peek() != '*')
+        {
+            isBalanced = false;
+        }
+
+        return isBalanced;
+
     }
 
     public static void main(String[] args) 
@@ -144,6 +197,11 @@ public class Problems {
         Problems obj = new Problems();
         boolean resultv2 = obj.isExpressionBalanced(expression);
         System.out.println("\nThe Expression is : " + resultv2);
+
+        // Problem 4
+        String expressionv1 = "({[]})";
+        boolean resultv3 = obj.isExpressionBalancedV2(expressionv1);
+        System.out.println("\nThe Expression is : " + resultv3);
     }
 
 }

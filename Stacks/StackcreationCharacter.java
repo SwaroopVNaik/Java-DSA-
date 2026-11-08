@@ -16,7 +16,7 @@ public class StackcreationCharacter
     {
         if(this.top == size - 1)
         {
-            System.out.println("The Stack is Full");
+            // System.out.println("The Stack is Full");
             return;
         }
 
@@ -28,7 +28,7 @@ public class StackcreationCharacter
     {
         if(this.top == -1)
         {
-            System.out.println("The Stack is Empty");
+            // System.out.println("The Stack is Empty");
             return '*';
         }
 
@@ -39,7 +39,7 @@ public class StackcreationCharacter
     {
         if(this.top == -1)
         {
-            System.out.println("The Stack is Empty");
+            // System.out.println("The Stack is Empty");
             return '*';
         }
 

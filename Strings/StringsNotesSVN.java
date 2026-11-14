@@ -146,7 +146,7 @@ public class StringsNotesSVN {
 
         */
 
-        // Examples of Group C
+        // Examples program of Group C
 
         // 1) equals() and equalsToIgnoreCase()
         
@@ -170,9 +170,39 @@ public class StringsNotesSVN {
 
         System.out.println("Swaroop".compareToIgnoreCase("swaroop")); // 0
 
+        // Group D - Changing / Transforming (always returns new string)
+
+        /*  
         
+            1) toUpperCase() and toLowerCase() = returns a string with letters converted, with non - letters stay as they are.
 
+            2) trim() and strip() = trim() handles basic whitespaces, 
+                                    strip() handles unicode whitespaces, was introduced in java 11.
 
+            3) replace and replaceAll() =
+            
+
+        */
+
+        // Example program of Group D 
+
+        // 1) toUpperCase() and toLowerCase()
+
+        String wordV4 = "Hello World 777";
+
+        System.out.println(wordV4.toUpperCase()); // HELLO WORLD 123
+
+        System.out.println(wordV4.toLowerCase()); // hello world 123
+
+        System.out.println(wordV4); // orginal string remain unchanged cause strings are immutable
+
+        // 2) trim() and strip() 
+
+        String wordV7 = "   hello world    ";
+
+        System.out.println("[" + wordV7 + "]");
+        System.out.println("[" + wordV7.trim() + "]");
+        System.out.println("[" + wordV7.strip() + "]");
     }
 
 }

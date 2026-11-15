@@ -173,7 +173,7 @@ public class StringsNotesSVN {
         // Group D - Changing / Transforming (always returns new string)
 
         /*  
-        
+
             1) toUpperCase() and toLowerCase() = returns a string with letters converted, with non - letters stay as they are.
 
             2) trim() and strip() = trim() handles basic whitespaces, 
@@ -191,6 +191,7 @@ public class StringsNotesSVN {
                                           '+' : operator is more flexible converts numbers and chars to text.
             
             5) repeat() = Returns the String repeated count times. count must not be negative.
+
         */
 
         // Example program of Group D 
@@ -244,7 +245,46 @@ public class StringsNotesSVN {
 
         // System.out.println("S".repeat(-1)); illegalArgumentException
 
+        // Group E : Splitting and Joining
+
+        /*
         
+            1) split() = is used to divide string into multiple smaller strings based on the sperator
+
+            -> Special Regex characters need escaping (\\).
+
+            Comma  (,)  -> split(",")     // No escaping needed
+            Pipe   (|)  -> split("\\|")   // Special Regex character
+            Dot    (.)  -> split("\\.")   // Special Regex character
+            Star   (*)  -> split("\\*")   // Special Regex character
+            Plus   (+)  -> split("\\+")   // Special Regex character
+            Hyphen (-)  -> split("-")     // No escaping needed
+
+            2) String.join() = Join Multiple Strings using a 
+
+        */
+
+        // Example program of Group E
+
+        // 1) split()
+
+        String sentence = "Algorithms is steps of instructions to write a program";
+
+        String[] wordd = sentence.split(" ");
+
+        System.out.println(Arrays.toString(wordd));
+
+        System.out.println(Arrays.toString("a, b, c".split(", ")));
+
+        String nameV1 = "Swaroop.V.Naik";
+
+        String [] wordV9 = nameV1.split("\\.");
+
+        System.out.println(Arrays.toString(wordV9));
+
+        // 2) String.join()
+
+
     }
 
 }

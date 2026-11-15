@@ -115,7 +115,144 @@ public class StringProblemIMP
 
     }
 
-    
+    static void printCharAtOddIndices()
+    {
+        char [] letter = {'s', 'w', 'a', 'r', 'o', 'o', 'p'};
+
+        for(int index = 0; index < letter.length; index = index + 1)
+        {
+            if(index % 2 != 0)
+            {
+                System.out.println(letter[index]);
+            }
+        }
+    }
+
+    static void printStringAtOddIndices()
+    {
+        String name = "Swaroop.V.Naik";
+
+        for(int index = 0; index < name.length(); index = index + 1)
+        {
+            if(index % 2 != 0)
+            {
+                System.out.println("\n" + name.charAt(index));
+            }
+        }
+    }
+
+    static void printASCIIValuesOfDigits()
+    {
+        char [] digits = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
+
+        for(int index = 0; index < digits.length; index = index + 1)
+        {
+            System.out.println(digits[index] + " => " + (int) digits[index]);
+        }
+    }
+
+    static void printASCIIValuesOfDigitsInString()
+    {
+        String digits = "0123456789";
+
+        for(int index = 0; index < digits.length(); index = index + 1)
+        {
+            System.out.println((int) digits.charAt(index));
+        }
+    }
+
+    static int getCountOfVowelsInCharacter()
+    {
+        char [] letters = {'s', 'w', 'a', 'r','o', 'o', 'p'};
+        
+        int vowelsCount = 0;
+
+        for(int index = 0; index < letters.length; index = index + 1)
+        {
+            if(letters[index] == 'A' || letters[index] == 'a'  ||
+                letters[index] == 'E' || letters[index] == 'e' ||
+                letters[index] == 'I' || letters[index] == 'i' ||
+                letters[index] == 'O' || letters[index] == 'o' ||
+                letters[index] == 'U' || letters[index] == 'u' )
+            {
+                vowelsCount = vowelsCount + 1;
+            }
+        }
+
+        return vowelsCount;
+    }
+
+    static int getCountOfVowelsInString()
+    {
+        String name = "Swaroop.V.Naik";
+
+        int vowelsCount = 0;
+
+        for(int index = 0; index < name.length(); index = index + 1)
+        {
+            if(name.charAt(index) == 'A' || name.charAt(index) == 'a'  ||
+                name.charAt(index) == 'E' || name.charAt(index) == 'e' ||
+                name.charAt(index) == 'I' || name.charAt(index) == 'i' ||
+                name.charAt(index) == 'O' || name.charAt(index) == 'o' ||
+                name.charAt(index) == 'U' || name.charAt(index) == 'u' )
+            {
+                vowelsCount = vowelsCount + 1;
+            }
+        }
+
+        return vowelsCount;
+    }
+
+    static int getCountOfUpperCaseLettersInChar()
+    {
+        char [] letters = {'A', 'a', 'e', 'Z', 'Y', 'o', 'P'};
+
+        int upperCaseCount = 0;
+
+        for(int index = 0; index < letters.length; index = index + 1)
+        {
+            if(letters[index] >= 'A' && letters[index] <= 'Z')
+            {
+                upperCaseCount = upperCaseCount + 1;
+            }
+        }
+
+        return upperCaseCount;
+    }
+
+    static int getCountOfUpperCaseLettersInString()
+    {
+        String name = "Swaroop.V.Naik";
+
+        int upperCaseCount = 0;
+
+        for(int index = 0; index < name.length(); index = index + 1)
+        {
+            if(name.charAt(index) >= 'A' && name.charAt(index) <= 'Z')
+            {
+                upperCaseCount = upperCaseCount + 1;
+            }
+        }
+
+        return upperCaseCount;
+    }
+
+    static int getCountOfDigitsInString()
+    {
+        String input = "A1B2";
+
+        int digitCount = 0;
+
+        for(int index = 0; index < input.length(); index = index + 1)
+        {
+            if(input.charAt(index) >= '0' && input.charAt(index) <= '9')
+            {
+                digitCount = digitCount + 1;
+            }
+        }
+
+        return digitCount;
+    }
 
     public static void main(String[] args) 
     {
@@ -149,6 +286,37 @@ public class StringProblemIMP
         printMiddleCharacterOfString();
 
         printMiddleElementsOfChar();
+
+        printCharAtOddIndices();
+
+        printStringAtOddIndices();
+
+        printASCIIValuesOfDigits();
+
+        printASCIIValuesOfDigitsInString();
+
+        int resultV1 = getCountOfVowelsInCharacter();
+
+        System.out.println("The Number of Vowels in the character : " + resultV1);
+
+        int resultV2 = getCountOfVowelsInString();
+
+        System.out.println("The Number of Vowels in the String : " + resultV2);
+
+        int resultV3 = getCountOfUpperCaseLettersInChar();
+        
+        System.out.println("The Upper Case Letter Count In Character is : " + resultV3);
+
+        int resultV4 = getCountOfUpperCaseLettersInString();
+
+        System.out.println("The Upper Case Letter Count In String is : " + resultV4);
+
+        int resultV5 = getCountOfDigitsInString();
+
+        System.out.println("The count of digits in String is : " + resultV5);
+        
+
+
     }
 
 }

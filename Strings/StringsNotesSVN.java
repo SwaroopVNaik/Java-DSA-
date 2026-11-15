@@ -179,9 +179,18 @@ public class StringsNotesSVN {
             2) trim() and strip() = trim() handles basic whitespaces, 
                                     strip() handles unicode whitespaces, was introduced in java 11.
 
-            3) replace and replaceAll() =
-            
+            3) replace() and replaceAll() = replace() a character with another Character()
+                                            replaceAll() replaces all matching text using Regular Expression.
 
+            replace(oldchar, newchar)
+            replaceAll(old String, newString)
+
+            regular Expression (REGEX) = it is a pattern that we create to identify particular characters or group of characters.
+
+            4) concat() and the + operator = joins two Strings and returns new String
+                                          '+' : operator is more flexible converts numbers and chars to text.
+            
+            5) repeat() = Returns the String repeated count times. count must not be negative.
         */
 
         // Example program of Group D 
@@ -203,6 +212,39 @@ public class StringsNotesSVN {
         System.out.println("[" + wordV7 + "]");
         System.out.println("[" + wordV7.trim() + "]");
         System.out.println("[" + wordV7.strip() + "]");
+
+        // 3) replace() and replaceAll()
+
+        System.out.println("banana".replace('a', 'o')); // bonono
+        System.out.println("banana".replace("an", "AN")); // bANANa
+
+        System.out.println("a1b2c3".replaceAll("[0-9]", "")); // abc
+
+        System.out.println("abc   ".replace(' ', '*')); // abc****
+
+        // 4) concat() and the + operator
+
+        String WordAA = "Hello"; String WordBB = "World";
+
+        System.out.println(WordAA.concat(WordBB)); // HelloWorld
+        System.out.println(WordAA.concat(" ").concat(WordBB)); // Hello World
+        System.out.println("Score : " + 95); // Score : 95
+
+        System.out.println(1 + 2 + 'A'); // 1 + 2 = 3 + A(65) => 68 (in case of char ascii value get added)
+
+        System.out.println(1 + 2 + "A"); // 1 + 2 = 3 => 3A (in case of string numbers get add and string get concat)
+
+        // 5) repeat()
+
+        System.out.println("Swaroop".repeat(5)); // SwaroopSwaroopSwaroopSwaroopSwaroop -> 5 times
+
+        System.out.println("->".repeat(10)); // ->->->->->->->->->->
+
+        System.out.println("X".repeat(0).isEmpty()); // true
+
+        // System.out.println("S".repeat(-1)); illegalArgumentException
+
+        
     }
 
 }

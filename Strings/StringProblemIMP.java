@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class StringProblemIMP 
 {
     static void convertingLetterAtoB(char letter)
@@ -254,6 +256,265 @@ public class StringProblemIMP
         return digitCount;
     }
 
+    static int getCountOfSpecialCharectersInChar()
+    {
+        char [] name = {'A', '&', 'B', 'C', '$', '2'};
+
+        int specialCharcaterCounter = 0;
+
+        for(int index = 0; index < name.length; index = index + 1)
+        {
+            if(!((name[index] >= 'A' && name[index] <= 'Z') ||
+               (name[index] >= 'a' && name[index] <= 'z') ||
+               (name[index] >= '0' && name[index] <= '9')))
+               {
+
+                specialCharcaterCounter = specialCharcaterCounter + 1;
+
+               }
+
+        }
+
+        return specialCharcaterCounter;
+    }
+
+    static int getCountOfSpecialCharectersInString()
+    {
+        String name = "S@wa&roop*";
+
+        int specialCharcaterCounter = 0;
+
+        for(int index = 0; index < name.length(); index = index + 1)
+        {
+            if(!((name.charAt(index) >= 'A' && name.charAt(index) <= 'Z') ||
+               (name.charAt(index) >= 'a' && name.charAt(index) <= 'z') ||
+               (name.charAt(index) >= '0' && name.charAt(index) <= '9')))
+               {
+
+                specialCharcaterCounter = specialCharcaterCounter + 1;
+
+               }
+        }
+
+        return specialCharcaterCounter;
+    }
+
+    static void countOccuranceOfCharecter()
+    {
+        char [] name = {'J', 'a', 'v', 'a'};
+
+        int charOccuranceCounter = 0;
+
+        char key = 'a';
+
+        for(int index = 0; index < name.length; index = index + 1)
+        {
+            if(key == (char) name[index])
+            {
+                charOccuranceCounter = charOccuranceCounter + 1;
+            }
+        }
+
+        System.out.println("The occurance of Character is " + key + " is : " + charOccuranceCounter);
+        
+    }
+
+    static void countOccuranceOfCharcaterInString()
+    {
+        String name = "SanthoshSir";
+
+        int charOccuranceCounter = 0;
+
+        char key = 'S';
+
+        for(int index = 0; index < name.length(); index = index + 1)
+        {
+            if(key == (char) name.charAt(index))
+            {
+                charOccuranceCounter = charOccuranceCounter + 1;
+            }
+        }
+
+        System.out.println("The occurance of charecter in string is " + key + " is : " + charOccuranceCounter);
+        
+    }
+
+    static void getLargestCharacter()
+    {
+        char [] name = {'S', 'W', 'A', 'R', 'O', 'O', 'P'};
+
+        char largestCharecter = name[0];
+
+        for(int index = 1; index < name.length; index = index + 1)
+        {
+            if(largestCharecter < (char) name[index])
+            {
+                largestCharecter = name[index];
+            }
+        }
+
+        System.out.println("The Largest Character is : " + largestCharecter);
+
+    }
+
+    static void getLargestCharacterInString()
+    {
+        String name = "SwaroopVNaik";
+
+        char largestCharcter = name.charAt(0);
+
+        for(int index = 1; index < name.length(); index = index + 1)
+        {
+            if(largestCharcter < (char) name.charAt(index))
+            {
+                largestCharcter = name.charAt(index);
+            }
+        }
+
+         System.out.println("The Largest Character in String is : " + largestCharcter);
+
+    }
+
+    static void replaceTheVowelsWithStarInCharcacter()
+    {
+        char [] name = {'S', 'W', 'A', 'R', 'O', 'O', 'P'};
+
+        for(int index = 0; index < name.length; index = index + 1)
+        {
+            if(name[index] == 'A' || name[index] == 'a'  ||
+                name[index] == 'E' || name[index] == 'e' ||
+                name[index] == 'I' || name[index] == 'i' ||
+                name[index] == 'O' || name[index] == 'o' ||
+                name[index] == 'U' || name[index] == 'u' )
+            {
+                name[index] = '*';
+            }
+        }
+
+        for(char ch : name)
+        {
+            System.out.print(ch + " ");
+        }
+    }
+    
+    static void replaceTheVowelsWithStarInString()
+    {
+        String name = "SwaroopVNaik";
+
+        String result = "";
+
+        for(int index = 0; index < name.length(); index = index + 1)
+        {
+            if(name.charAt(index) == 'A' || name.charAt(index) == 'a'  ||
+                name.charAt(index) == 'E' || name.charAt(index) == 'e' ||
+                name.charAt(index) == 'I' || name.charAt(index) == 'i' ||
+                name.charAt(index) == 'O' || name.charAt(index) == 'o' ||
+                name.charAt(index) == 'U' || name.charAt(index) == 'u' )
+            {
+                result += "*";
+            }
+            else
+            {
+                result += name.charAt(index);
+            }
+        }
+
+        System.out.println("\nThe vowels with star in string : " + result);
+    }
+
+    static void ReverseCharacterArray()
+    {
+        char [] sentence = {'L', 'e', 't', '\'', 's', ' ', 't', 'a', 'k', 'e', ' ', 'l', 'e', 'e', 't', 'c', 'o', 'd', 'e'};
+
+        int start = 0;
+
+        for(int end = 0; end < sentence.length; end = end + 1)
+        {
+            if(end == sentence.length - 1 || sentence[end] == ' ')
+            {
+                int left = start;
+                
+                int right = 0;
+
+                if(end == sentence.length - 1)
+                {
+                    right = end;
+                }
+                else
+                {
+                    right = end - 1;
+                }
+
+                while(left < right)
+                {
+                    char temp = sentence[right];
+                    sentence[right] = sentence[left];
+                    sentence[left] = temp;
+
+                    left++;
+                    right--;
+                }
+
+                start = end + 1;
+            }
+        }
+
+        System.out.println();
+        for(char New : sentence)
+        {
+            System.out.print(New + " ");
+        }
+
+    }
+
+    static void ReverseString()
+    {
+        String name = "Swaroop V Naik";
+
+        String reversedName = "";
+        String temp = "";
+
+        for(int index = 0; index < name.length(); index = index + 1)
+        {
+            if(name.charAt(index) != ' ')
+            {
+                temp = name.charAt(index) + temp;
+            }
+            else
+            {
+                reversedName = reversedName + temp + ' ';
+                temp = "";
+            }
+        }
+
+        reversedName += temp;
+
+        System.out.println("\nThe Reversed String : " + reversedName);
+    }
+
+    static int getLengthOfLastWord()
+    {
+        String message = "Hello World Siddharth                           ";
+
+        int index = message.length() - 1;
+        while(index >= 0 && message.charAt(index) == ' ')
+        {
+            index = index - 1;
+        }
+
+        int LastSentenceWordCounter = 0;
+
+        while(index >= 0 && message.charAt(index) != ' ')
+        {
+            LastSentenceWordCounter = LastSentenceWordCounter + 1;
+
+            index = index - 1;
+        }
+
+        return LastSentenceWordCounter;
+
+    }
+
     public static void main(String[] args) 
     {
         char letter = 'A';
@@ -314,9 +575,32 @@ public class StringProblemIMP
         int resultV5 = getCountOfDigitsInString();
 
         System.out.println("The count of digits in String is : " + resultV5);
+
+        int resultV6 = getCountOfSpecialCharectersInChar();
+
+        System.out.println("The count of special Charecter is : " + resultV6);
+
+        int resultV7 = getCountOfSpecialCharectersInString();
+
+        System.out.println("The count of special character in strings : " + resultV7);
         
+        countOccuranceOfCharecter();
 
+        countOccuranceOfCharcaterInString();
 
+        getLargestCharacter();
+
+        replaceTheVowelsWithStarInCharcacter();
+
+        replaceTheVowelsWithStarInString();
+
+        ReverseCharacterArray();
+
+        ReverseString();
+
+        int resultV8 = getLengthOfLastWord();
+
+        System.out.println("\nThe Number length of last word is : " + resultV8);
     }
 
 }

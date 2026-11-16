@@ -81,6 +81,7 @@ public class StringsNotesSVN {
             3) contains(), startWith(), endsWith() = These methods checks whether the string contains the given piece of text.
 
             4) toCharArray = converts the strings to new char array.
+                (string is mutable but char array is immutable)
 
         */
 
@@ -143,6 +144,12 @@ public class StringsNotesSVN {
 
                 compareToIgnoreCase() = compares two string lexicographically, does not consider case - sensitivity
 
+            --> How CompareTo works
+            s
+            - compare from left to right.
+            - stop if different charecter found.
+            - count if same chars found.
+            - if all chars match and but one ends then sub happens.
 
         */
 
@@ -161,8 +168,13 @@ public class StringsNotesSVN {
 
         // 2)  compareTo() and compareToIgnoreCase()
 
+        // <0 --> first string comes before second string.
         System.out.println("apple".compareTo("banana")); // -1 
+
+        // >0 --> first string comes after second string.
         System.out.println("banana".compareTo("apple")); // 1
+
+        // ==0 --> Both Strings are Equal.
         System.out.println("apple".compareTo("apple")); // 0
 
         System.out.println("app".compareTo("apple")); // -2

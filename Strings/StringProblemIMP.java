@@ -515,6 +515,32 @@ public class StringProblemIMP
 
     }
 
+    static boolean checkPalindromeInString()
+    {
+        String name = "lol";
+
+        int index = 0;
+        int lastindex = name.length() - 1;
+
+        Boolean palindrome = true;
+
+        while(index < lastindex)
+        {
+            if(name.charAt(index) != name.charAt(lastindex))
+            {
+                palindrome = false;
+                break;
+            }
+
+            index = index + 1;
+            lastindex = lastindex - 1;
+        }
+
+        return palindrome;
+    }
+
+
+
     public static void main(String[] args) 
     {
         char letter = 'A';
@@ -601,6 +627,10 @@ public class StringProblemIMP
         int resultV8 = getLengthOfLastWord();
 
         System.out.println("\nThe Number length of last word is : " + resultV8);
+
+        Boolean resultV9 = checkPalindromeInString();
+
+        System.out.println("\nThe String is palindrome : " + resultV9);
     }
 
 }

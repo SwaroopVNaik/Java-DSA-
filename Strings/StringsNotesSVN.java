@@ -90,9 +90,11 @@ public class StringsNotesSVN {
         // 1) substring()
 
         String messageV1 = "HelloWorld";
-
+                                            // range⬇️ 
         System.out.println(messageV1.substring(0 , 5)); // begin : 0 and // end : 5 o/p : Hello
         System.out.println(messageV1.substring(5, 10)); // begin : 5 and // end : 10 o/p : world
+
+                                          // begin⬇️
         System.out.println(messageV1.substring(1)); // begin : 1 // o/p : elloWorld
         // System.out.println(messageV1.substring(12)); StringIndexOutOfBounds Error !
 
@@ -204,6 +206,8 @@ public class StringsNotesSVN {
             
             5) repeat() = Returns the String repeated count times. count must not be negative.
 
+            6) valueOf() = covert any value(float, double, int) to String.
+
         */
 
         // Example program of Group D 
@@ -223,7 +227,7 @@ public class StringsNotesSVN {
         String wordV7 = "   hello world    ";
 
         System.out.println("[" + wordV7 + "]");
-        System.out.println("[" + wordV7.trim() + "]");
+        System.out.println("[" + wordV7.trim() + "]"); // [hello world]
         System.out.println("[" + wordV7.strip() + "]");
 
         // 3) replace() and replaceAll()

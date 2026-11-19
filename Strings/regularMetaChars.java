@@ -1,4 +1,4 @@
-public class regularMetaChars 
+public class RegularMetaChars 
 {
     public static void main(String[] args)
     {

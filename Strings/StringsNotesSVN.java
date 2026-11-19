@@ -1,3 +1,4 @@
+import java.lang.annotation.Repeatable;
 import java.util.*;
 public class StringsNotesSVN {
 
@@ -299,6 +300,31 @@ public class StringsNotesSVN {
         System.out.println(Arrays.toString(wordV9));
 
         // 2) String.join()
+
+        // ------------------------------------------------------------------------
+
+        // Assingment ===>
+
+        // valueOf
+
+        int number = 12345;
+
+        String numberStr = String.valueOf(number);
+
+        System.out.println("Integer to String converstion : " +  numberStr);
+
+        // Repeat()
+
+        String namev7 = "Java";
+
+        System.out.println("Repetation Of Java : " + namev7.repeat(5));
+
+        // replace only the first "is" in "Java is easy"
+
+        String sentenceV7 = "Java is Easy, Java is PowerFull";
+
+        System.out.println("Replace word : " + sentenceV7.replaceFirst("is", "*"));
+
 
 
     }

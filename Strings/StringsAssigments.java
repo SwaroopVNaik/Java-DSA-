@@ -1,6 +1,7 @@
+import java.util.Arrays;
+
 public class StringsAssigments 
 {
-
     static void extractEmail()
     {
         String email = "swaroop.v.naik@gmail.com";
@@ -39,7 +40,33 @@ public class StringsAssigments
     {
         String sentence = "Java is very    powerful, oops      dsa              development   ai";
 
-        
+        System.out.println("After Removing Extra Space : " + sentence.replaceAll("\\s+" , " "));
+    }
+
+    static void getCountOfWord()
+    {
+        String sentence = "Builder is fast but not thread safety";
+
+        int count = 0;
+
+        if(sentence.length() != 0)
+        {
+            String [] array = sentence.split(" ");
+
+            for(String word : array)
+            {
+                count = count + 1;
+            }
+        }
+
+        System.out.println("Number of words in sentence : " + count);
+    }
+
+    static void ValidDateFormat()
+    {
+        String date = "01/12/2000";
+
+        System.out.println("The Valid Date Format is : ");
     }
 
     public static void main(String[] args) 
@@ -60,5 +87,11 @@ public class StringsAssigments
 
         removeExtraSpace();
 
+        // 5) Count the number of word in the string
+
+        getCountOfWord();
+
+        // 6) check weather the given string is valid date format string;
+        ValidDateFormat();
     }    
 }

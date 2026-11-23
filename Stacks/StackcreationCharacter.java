@@ -4,40 +4,40 @@ public class StackcreationCharacter
 {
     int size = 0;
     int top = -1;
-    char [] values = new char[size];
+    char [] Stack;
 
     public StackcreationCharacter(int stackSize)
     {
-        this.size = stackSize;
-        this.values = new char[stackSize];
+        size = stackSize;
+        Stack = new char[stackSize];
     }
 
     public void push(char val)
     {
-        if(this.top == size - 1)
+        if(top == size - 1)
         {
             // System.out.println("The Stack is Full");
             return;
         }
 
-        this.top++;
-        this.values[this.top] = val;
+        top++;
+        Stack[top] = val;
     }
 
     public char peek()
     {
-        if(this.top == -1)
+        if(top == -1)
         {
             // System.out.println("The Stack is Empty");
             return '*';
         }
 
-        return this.values[this.top];
+        return Stack[top];
     }
 
     public char pop()
     {
-        if(this.top == -1)
+        if(top == -1)
         {
             // System.out.println("The Stack is Empty");
             return '*';
@@ -45,9 +45,9 @@ public class StackcreationCharacter
 
         // we use a index variable to store the value of top before decreementing the top so we do
         // not loose the top value
-        int index = this.top;
-        this.top--;
-        return this.values[index];
+        int index = top;
+        top--;
+        return Stack[index];
     }
 
 }

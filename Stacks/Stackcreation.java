@@ -2,50 +2,109 @@ package Stacks;
 
 public class Stackcreation 
 {
-    int size = 0;
-    int top = -1;
-    int [] values = new int[size];
+    // Blue - print(Requirments)
+    int size = 0; // size
+    int top = -1; // top
+    int [] Stack;
 
-    public Stackcreation(int stacksize)
+    Stackcreation(int size)
     {
-        this.values = new int[stacksize];
-        this.size = stacksize;
+        this.size = size; // using this to give important to current size
+        top = -1;
+        Stack = new int[size]; // Array create agherodu
     }
 
-    public void push(int val)
+    // isEmpty()
+    boolean isEmpty()
     {
-        if(this.top == size - 1)
+        return top == -1;
+    }
+
+    // isFull()
+    boolean isFull()
+    {
+        return top == size - 1;
+    }
+
+    // push() --> inserting values
+    void push(int value)
+    {
+        if(isFull())
         {
-            System.out.println("The stack is full !");
+            System.out.println("Stack OverFlow !");
             return;
         }
-
-        this.top++;
-        this.values[this.top] = val;
-    }
-
-    public int peek()
-    {
-        if(this.top == -1)
+        else
         {
-            System.out.println("The Stack is Empty !");
-            return -1000;
-        }
+            top++;
+            Stack[top] = value;
 
-        return this.values[this.top];
+            System.out.println(value + " : Inserted Into Stack");
+        }
     }
 
-    public int pop()
+    //pop() --> deleting element
+    int pop()
     {
-        if(this.top == -1)
+        if(isEmpty())
         {
-            System.out.println("The Stack is Empty");
-            return -1000;
+            System.out.println("Stack is Empty !");
+            return -1;
         }
-
-    int index = this.top;
-    this.top--;
-    return this.values[index];
-
+        else
+        {
+            int value = Stack[top];
+            top--;
+            return value;
+        }
     }
+
+    // stackTop() -> seeing the topmost element
+    int stackTop()
+    {
+        if(isEmpty())
+        {
+            System.out.println("Stack is Empty !");
+            return -1;
+        }
+        else
+        {
+            return Stack[top];
+        }
+    }
+
+    // peek() --> looking at the index value;
+    int peek(int position)
+    {
+        int index = top - position + 1;
+
+        if(index < 0  || index  > top)
+        {
+            System.out.println("Invalid Position");
+            return -1;
+        }
+        else
+        {
+            return Stack[index];
+        }
+    }
+
+    // display()
+    void display()
+    {
+        if(isEmpty())
+        {
+            System.out.println("Stack is Empty !");
+            return;
+        }
+        else 
+        {
+            System.out.println("\nStack elements : ");
+            for(int index = size - 1; index >= 0; index = index - 1)
+            {
+                System.out.println(Stack[index]);
+            }
+        }
+    }
+
 }

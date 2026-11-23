@@ -10,7 +10,7 @@ public class StackDemo {
         // so that we check if stack is created perfectly
 
         mystack.pop();
-        mystack.peek();
+        mystack.peek(3);
         mystack.push(10);
         mystack.push(20);
         mystack.push(30);
@@ -21,7 +21,7 @@ public class StackDemo {
         mystack.push(80);
         mystack.push(90);
         mystack.push(100);
-        System.out.println(mystack.peek()); 
+        System.out.println(mystack.peek(7)); 
         mystack.pop();
         mystack.pop();
         mystack.pop();

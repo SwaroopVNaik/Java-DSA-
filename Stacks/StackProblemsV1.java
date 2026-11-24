@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class StackProblemsV1 
 {
-
+   static int temp = 50;
     // time complexity : O(n)
     static void addingElementInBottom(int value, Stackcreation StackPV1)
     {
@@ -138,9 +138,68 @@ public class StackProblemsV1
         }
     }
 
+    static void isStackPalindrome(Stackcreation StackPV)
+    {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter the Five Values to check palindrome : ");
+        int index = 0;
+        while(index < StackPV.size)
+        {
+            int value = scanner.nextInt();
+            StackPV.push(value);
+
+            index = index + 1;
+        }
+
+    }
+
+    static void removeEvenNumber(Stackcreation StackPV)
+    {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("\nEnter the 5 values in stack :");
+        for(int index = 0; index < StackPV.size; index = index + 1)
+        {
+            int value = scanner.nextInt();
+            StackPV.push(value);
+        }
+
+        Stackcreation temp = new Stackcreation(StackPV.size);
+
+        for(int index = StackPV.size - 1; index >= 0; index = index - 1)
+        {
+            if(StackPV.Stack[index] % 2 == 0)
+            {
+                int value = StackPV.Stack[index];
+                temp.push(value);
+            }
+        }
+        
+        temp.display();
+
+    }
+
+    static void removeMiddleElement(Stackcreation StackPV)
+    {
+        Stackcreation temp = new Stackcreation(StackPV.size);
+
+        int firstIndex = 0;
+        int LastIndex = StackPV.size - 1;
+        
+            while(firstIndex <= LastIndex)
+            {
+                firstIndex = firstIndex + 1;
+                LastIndex = LastIndex - 1;
+            }
+    }
+    
+
     public static void main(String[] args)
     {
         Stackcreation StackPV = new Stackcreation(5);
+
+        System.out.println(temp);
 
         System.out.println("Before inserting the element in the bottom of the stack :");
         StackPV.push(10);
@@ -166,7 +225,29 @@ public class StackProblemsV1
         Stackcreation StackPV3 = new Stackcreation(3);
 
         // 4)Implementing Dynamic Stack
-        dynamicStack(StackPV3);
+        // dynamicStack(StackPV3);
+
+        // 5) Check if Stack is a Palindrome
+
+        // isStackPalindrome(StackPV4);
+
+        // 6) Remove all even numbers from stack
+
+        Stackcreation StackPV4 = new Stackcreation(5);
+        removeEvenNumber(StackPV4);
+
+        // 7) Remove middle elements in the stack
+        Stackcreation StackPV5 = new Stackcreation(5);
+
+        System.out.println();
+
+        StackPV5.push(12);
+        StackPV5.push(20);
+        StackPV5.push(15);
+        StackPV5.push(12);
+        StackPV5.push(12);
+
+        removeMiddleElement(StackPV5);
 
     }
 }

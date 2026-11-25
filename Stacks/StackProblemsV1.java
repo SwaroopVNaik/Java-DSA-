@@ -185,13 +185,40 @@ public class StackProblemsV1
         Stackcreation temp = new Stackcreation(StackPV.size);
 
         int firstIndex = 0;
-        int LastIndex = StackPV.size - 1;
+        int LastIndex = StackPV.top;
         
-            while(firstIndex <= LastIndex)
+        while(firstIndex <= LastIndex)
+        {
+            if(firstIndex == LastIndex)
             {
-                firstIndex = firstIndex + 1;
-                LastIndex = LastIndex - 1;
+                break;
             }
+
+            temp.push(StackPV.Stack[firstIndex]);
+            temp.push(StackPV.Stack[LastIndex]);
+
+            firstIndex = firstIndex + 1;
+            LastIndex = LastIndex - 1;
+        }
+
+        while(!(StackPV.isEmpty()))
+        {
+            StackPV.pop();
+        }
+
+        System.out.println("Middle Element Removed Successfully : ");
+        Stackcreation temp2 = new Stackcreation(StackPV.size - 1);
+
+        int index = temp2.size - 1;
+        while(index >= 0)
+        {
+            if(temp.top != 0)
+            {
+                temp2.push(temp.Stack[index]);
+            }
+
+            index = index - 1;
+        }
     }
     
 
@@ -237,15 +264,17 @@ public class StackProblemsV1
         removeEvenNumber(StackPV4);
 
         // 7) Remove middle elements in the stack
-        Stackcreation StackPV5 = new Stackcreation(5);
+        Stackcreation StackPV5 = new Stackcreation(7);
 
         System.out.println();
 
-        StackPV5.push(12);
-        StackPV5.push(20);
-        StackPV5.push(15);
-        StackPV5.push(12);
-        StackPV5.push(12);
+        StackPV5.push(1);
+        StackPV5.push(2);
+        StackPV5.push(3);
+        StackPV5.push(4);
+        StackPV5.push(5);
+        StackPV5.push(6);
+        StackPV5.push(100);
 
         removeMiddleElement(StackPV5);
 

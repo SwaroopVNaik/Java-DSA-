@@ -39,7 +39,8 @@ public class Stackcreation
             top++;
             Stack[top] = value;
 
-            System.out.println(value + " : Inserted Into Stack");
+            // System.out.println(value + " : Inserted Into Stack");
+            System.out.println(value);
         }
     }
 

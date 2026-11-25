@@ -92,6 +92,13 @@ public class MainQueueArray {
         System.out.println(Queue.first());
         System.out.println(Queue.last());
 
+        System.out.println("----------------------------------------------");
+        System.out.println("isEmpty and isFull After the Dequeue Operation");
+        System.out.println("----------------------------------------------");
+
+        System.out.println("isEmpty :" + Queue.isEmpty()); // true
+        System.out.println("isFull : " + Queue.isFull()); // false
+        
     }
 
 }

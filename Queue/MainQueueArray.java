@@ -4,7 +4,6 @@ public class MainQueueArray {
 
     public static void main(String[] args) 
     {
-
         QueueArray Queue = new QueueArray(5);
 
         System.out.println("--------------");
@@ -98,7 +97,7 @@ public class MainQueueArray {
 
         System.out.println("isEmpty :" + Queue.isEmpty()); // true
         System.out.println("isFull : " + Queue.isFull()); // false
-        
+
     }
 
 }

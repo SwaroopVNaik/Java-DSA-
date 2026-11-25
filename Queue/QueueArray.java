@@ -58,7 +58,8 @@ public class QueueArray {
     // isfull()
     public boolean isFull()
     {
-        return rear == size - 1;
+        // you can use Frequency Counter idea !
+        return rear - front == size;
     }
 
     // first()

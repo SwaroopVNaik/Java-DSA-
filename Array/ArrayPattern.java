@@ -96,14 +96,14 @@ public class ArrayPattern {
     
     public static void main(String[] args) 
     {
-        int elements [] = {10, 20, 30, 40, 50, 60};
+        int elements [] = {10, 20, 30, 40, 50};
         
         ArrayPattern obj = new ArrayPattern();
 
         // obj.printLeftToRight(elements);
         // obj.printRightToLeft(elements);
-        // obj.twoPointersMeetAtCenter(elements);
-        obj.twoPointersMoveCentreToEnd(elements);
+        obj.twoPointersMeetAtCenter(elements);
+        // obj.twoPointersMoveCentreToEnd(elements);
     }
 
 }

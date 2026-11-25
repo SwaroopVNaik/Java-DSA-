@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class StackProblemsV1 
 {
-   static int temp = 50;
     // time complexity : O(n)
     static void addingElementInBottom(int value, Stackcreation StackPV1)
     {
@@ -138,6 +137,7 @@ public class StackProblemsV1
         }
     }
 
+    // pending (after class)
     static void isStackPalindrome(Stackcreation StackPV)
     {
         Scanner scanner = new Scanner(System.in);
@@ -154,6 +154,7 @@ public class StackProblemsV1
 
     }
 
+    // Time Complexity : O(n)
     static void removeEvenNumber(Stackcreation StackPV)
     {
         Scanner scanner = new Scanner(System.in);
@@ -180,6 +181,7 @@ public class StackProblemsV1
 
     }
 
+    // Time Complexity : O(n) -> Space Complexity o(n)
     static void removeMiddleElement(Stackcreation StackPV)
     {
         Stackcreation temp = new Stackcreation(StackPV.size);
@@ -225,8 +227,6 @@ public class StackProblemsV1
     public static void main(String[] args)
     {
         Stackcreation StackPV = new Stackcreation(5);
-
-        System.out.println(temp);
 
         System.out.println("Before inserting the element in the bottom of the stack :");
         StackPV.push(10);
@@ -277,6 +277,8 @@ public class StackProblemsV1
         StackPV5.push(100);
 
         removeMiddleElement(StackPV5);
+
+        // Implement two stack using one array;
 
     }
 }
